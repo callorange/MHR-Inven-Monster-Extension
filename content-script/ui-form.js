@@ -31,6 +31,12 @@
   let exclude_check = document.createElement("input");
   exclude_check.id = "exclude";
   exclude_check.type = "checkbox";
+  chrome.storage.sync.get('excludeApex', (items)=>{
+    exclude_check.checked = items.excludeApex;
+  });
+  exclude_check.addEventListener("change", (e)=>{
+    chrome.storage.sync.set({excludeApex: e.target.checked});
+  });
 
   // label
   let exclude_label = document.createElement("label");
