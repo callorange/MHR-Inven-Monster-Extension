@@ -12,7 +12,12 @@
   "content_scripts": [
     {
       "matches": ["https://mhf.inven.co.kr/dataninfo/mhr/monster/"],
-      "js": ["content-script/common.js", "content-script/monsters.js", "content-script/ui-table.js"]
+      "js": [
+        "content-script/common.js",
+        "content-script/monsters.js",
+        "content-script/ui-table.js",
+        "content-script/ui-form.js"
+      ]
     }
   ]
 }
