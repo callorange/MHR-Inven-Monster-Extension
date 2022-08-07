@@ -3,7 +3,67 @@
  */
 
 /**
- * 검색창 괴이 검색 버튼 추가
+ * 검색창 옵션 tr
+ */
+(function () {
+  // td를 만든다.
+  let option_td = document.createElement("td");
+  option_td.id = "options";
+
+  // th 만들기
+  let option_th = document.createElement("th");
+  option_th.innerText = "옵션";
+
+  // tr 만들고 th, td 추가
+  let option_tr = document.createElement("tr");
+  option_tr.append(option_th, option_td);
+
+  // tr을 테이블에 추가.
+  let searchBody = common.form.querySelector("tbody");
+  searchBody.append(option_tr);
+})();
+
+/**
+ * 검색창 옵션 내용
+ */
+(function () {
+  // checkbox
+  let exclude_check = document.createElement("input");
+  exclude_check.id = "exclude";
+  exclude_check.type = "checkbox";
+
+  // label
+  let exclude_label = document.createElement("label");
+  exclude_label.append(exclude_check, "주인제외");
+
+  // 추가.
+  let option_td = common.form.querySelector("td#options");
+  option_td.append(exclude_label);
+})();
+
+/**
+ * 검색창 괴이검색 tr
+ */
+(function () {
+  // td를 만든다.
+  let extra_td = document.createElement("td");
+  extra_td.id = "extra";
+
+  // th 만들기
+  let extra_th = document.createElement("th");
+  extra_th.innerText = "괴이소재";
+
+  // tr 만들고 th, td 추가
+  let extra_tr = document.createElement("tr");
+  extra_tr.append(extra_th, extra_td);
+
+  // tr을 테이블에 추가.
+  let searchBody = common.form.querySelector("tbody");
+  searchBody.append(extra_tr);
+})();
+
+/**
+ * 검색창 괴이검색 내용
  */
 (function () {
   // 필드셋 공통 설정
@@ -39,10 +99,8 @@
   e_btn.style.backgroundColor = "#cc3333";
   e_btn.style.color = "#fff";
 
-  // td를 만든다.
-  let extra_td = document.createElement("td");
-
   // 괴이화 소재 검색 옵션을 td에 추가한다
+  let extra_td = common.form.querySelector("td#extra");
   let extras = [
     ["없음"],
     ["뼈", "가죽"],
@@ -59,30 +117,16 @@
 
     let new_btn = l_btn.cloneNode();
     new_btn.innerText = `Ex${index}`;
-    // new_btn.addEventListener("click", function(){find_monster_ex_level(index);});
     new_btn.value = index;
     new_legend.append(new_btn);
 
     for (let extra of extras[index]) {
       let new_btn = e_btn.cloneNode();
       new_btn.innerText = extra;
-      // new_btn.addEventListener("click", function(){find_monster_ex_value(extra);});
       new_btn.value = extra;
       new_fieldset.append(new_btn);
     }
 
     extra_td.append(new_fieldset);
   }
-
-  // th 만들기
-  let extra_th = document.createElement("th");
-  extra_th.innerText = "괴이소재";
-
-  // tr 만들고 th, td 추가
-  let extra_tr = document.createElement("tr");
-  extra_tr.append(extra_th, extra_td);
-
-  // tr을 테이블에 추가.
-  let searchBody = common.form.querySelector("tbody");
-  searchBody.append(extra_tr);
 })();
