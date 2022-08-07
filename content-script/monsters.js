@@ -1,16 +1,20 @@
 /**
+ * @typedef {Object} MonsterInfo 몬스터 정보 객체
+ * @property {String} name 이름. 인벤 몬스터 페이지에 세팅된 이름이어야함.
+ * @property {Object} ex 괴이화 정보
+ * @property {Number} ex.level 괴이레벨. 0~4
+ * @property {value} ex.value 괴이소재. 
+ * @property {Object} anti 특효스킬 정보
+ * @property {Boolean} anti.aerial 파공룡주(아수종 특효: 비행 능력을 가진 몬스터에게 주는 대미지 증가)
+ * @property {Boolean} anti.dragon 파룡룡주(용 특효: 조룡종, 비룡종, 수룡종, 해룡종, 어룡종, 아룡종 몬스터에게 주는 대미지 증가)
+ * @property {Boolean} anti.aquatic 파수룡주(공서계 특효: 아수종 몬스터에게 주는 대미지 증가)
+ * @property {Boolean} anti.franged 파류룡주(수서계 특효: 물가에서 사는 몬스터에게 주는 대미지 증가)
+ * @property {String} comment 추가 코멘트
+ */
+
+/**
  * 몬스터 추가 정보 객체 배열
- * 
- * * name: string이름(몬헌 인벤 몬스터 정보 페이지에서 검색되는 data-name)
- * * ex: 괴이화 정보
- * *     level: 레벨
- * *     value: 소재
- * * anti: ** 특효 정보
- * *     aerial: 파공룡주(아수종 특효: 비행 능력을 가진 몬스터에게 주는 대미지 증가)
- * *     dragon: 파룡룡주(용 특효: 조룡종, 비룡종, 수룡종, 해룡종, 어룡종, 아룡종 몬스터에게 주는 대미지 증가)
- * *     aquatic: 파수룡주(공서계 특효: 아수종 몬스터에게 주는 대미지 증가)
- * *     franged: 파류룡주(수서계 특효: 물가에서 사는 몬스터에게 주는 대미지 증가)
- * *     small: 파소룡주(소형 특효: 소형 몬스터에게 주는 대미지 증가)
+ * @type {MonsterInfo[]} 몬스터정보 배열
  */
  const monsters = [
     {
