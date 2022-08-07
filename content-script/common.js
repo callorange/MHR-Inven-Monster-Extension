@@ -33,7 +33,7 @@ const common = (function () {
   let m_table_body = m_table.querySelector("tbody");
 
   /** @type {String} 인벤 X 이미지 HTML */
-  let star_0 =`<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_x.png" class="icon_img2">`;
+  let star_0 = `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_x.png" class="icon_img2">`;
 
   /** @type {String} 인벤 별 이미지 HTML */
   let star_1 = `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_star.png" class="icon_img2">`;
