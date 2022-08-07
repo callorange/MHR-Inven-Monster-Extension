@@ -7,6 +7,6 @@
     "default_title": "MHR-Inven-Monster-Extension"
   },
   "background": {
-    "service_worker": "./background.js"
+    "service_worker": "service-worker/background.js"
   }
 }
