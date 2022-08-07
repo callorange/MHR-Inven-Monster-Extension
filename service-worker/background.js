@@ -1,3 +1,5 @@
+const invenUrl = "https://mhf.inven.co.kr/dataninfo/mhr/monster/";
+
 /**
  * Extension이 설치될때
  *
@@ -11,7 +13,7 @@
  * *      "shared_module_update"
  */
 chrome.runtime.onInstalled.addListener((details) => {
-    // chrome.storage.sync.clear();
+  // chrome.storage.sync.clear();
 });
 
 /**
@@ -21,8 +23,23 @@ chrome.runtime.onInstalled.addListener((details) => {
  * ! popup이 설정되면 작동 하지 않는다.
  */
 chrome.action.onClicked.addListener((tab) => {
-  let url = "https://mhf.inven.co.kr/dataninfo/mhr/monster/";
-  if (tab.url != url) {
-    chrome.tabs.update(tab.id, { url });
+  if (tab.url != invenUrl) {
+    chrome.tabs.update(tab.id, { url: invenUrl });
   }
 });
+
+/**
+ * onMessage
+ *
+ * * content-script에서 처리 완료 메시지 수신
+ */
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.msg === "script-complete") {
+    chrome.action.setBadgeText({ tabId: sender.tab.id, text: "on" });
+  }
+});
+
+/**
+ * tab.onUpdate
+ */
+// chrome.tabs.onUpdated.addListener((id, info, tab) => {});

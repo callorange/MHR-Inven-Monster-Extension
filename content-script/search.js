@@ -97,3 +97,5 @@
     btn.addEventListener("click", find_ex_value);
   }
 })();
+
+chrome.runtime.sendMessage({msg:'script-complete'});
