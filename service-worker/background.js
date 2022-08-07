@@ -10,7 +10,9 @@
  * *      "chrome_update"
  * *      "shared_module_update"
  */
-chrome.runtime.onInstalled.addListener((details) => {});
+chrome.runtime.onInstalled.addListener((details) => {
+    // chrome.storage.sync.clear();
+});
 
 /**
  * 확장 프로그램 아이콘이 클릭 됬을때

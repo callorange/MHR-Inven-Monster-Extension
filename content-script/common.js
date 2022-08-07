@@ -11,8 +11,8 @@
  *  @property {HTMLTableSectionElement} table.head 몬스터테이블 head
  *  @property {HTMLTableSectionElement} table.body 몬스터테이블 body
  *  @property {Object} star 인벤 별이미지 객체
- *  @property {HTMLImageElement} star.zero X 이미지 => 별 0개
- *  @property {HTMLImageElement} star.one 별이미지 1개
+ *  @property {String} star.zero X 이미지 HTML => 별 0개
+ *  @property {String} star.one 별이미지 1개 HTML
  */
 
 /** @type {CommonInfo} content-script에서 공통으로 사용할 변수 객체 */
@@ -32,18 +32,11 @@ const common = (function () {
   /** @type {HTMLTableSectionElement} 몬스터 테이블 body */
   let m_table_body = m_table.querySelector("tbody");
 
-  /** @type {HTMLImageElement} */
-  let img = document.createElement("img");
-  img.class = "icon_img2";
+  /** @type {String} 인벤 X 이미지 HTML */
+  let star_0 =`<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_x.png" class="icon_img2">`;
 
-  /** @type {HTMLImageElement} 인벤 X 이미지 */
-  let star_0 = img.cloneNode();
-  star_0.src = "https://static.inven.co.kr/image_2011/mhf/common/14x14_x.png";
-
-  /** @type {HTMLImageElement} 인벤 별 이미지 */
-  let star_1 = img.cloneNode();
-  star_1.src =
-    "https://static.inven.co.kr/image_2011/mhf/common/14x14_star.png";
+  /** @type {String} 인벤 별 이미지 HTML */
+  let star_1 = `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_star.png" class="icon_img2">`;
 
   return {
     form: filter_form,
