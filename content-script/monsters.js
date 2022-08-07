@@ -999,5 +999,6 @@
     element.dataset.aquatic = current_monster.anti.aquatic;
     element.dataset.franged = current_monster.anti.franged;
     element.dataset.small = current_monster.anti.small;
+    element.dataset.comment = current_monster.comment;
   }
 })();
