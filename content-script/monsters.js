@@ -185,8 +185,8 @@
         value: "",
       },
       anti: {
-        aerial: true,
-        dragon: false,
+        aerial: false,
+        dragon: true,
         aquatic: false,
         franged: false,
         small: false,
