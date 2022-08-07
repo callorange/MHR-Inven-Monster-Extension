@@ -23,6 +23,7 @@
    * @type {MonsterInfo} 기본 몬스터 정보
    */
   let default_monster = {
+    name: "",
     ex: {
       level: 0,
       value: "",
@@ -34,6 +35,7 @@
       franged: false,
       small: true,
     },
+    comment: "",
   };
 
   /**

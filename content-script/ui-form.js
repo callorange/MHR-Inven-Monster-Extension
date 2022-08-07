@@ -31,11 +31,14 @@
   let exclude_check = document.createElement("input");
   exclude_check.id = "excludeApex";
   exclude_check.type = "checkbox";
-  chrome.storage.sync.get('excludeApex', (items)=>{
+  chrome.storage.sync.get("excludeApex", (items) => {
     exclude_check.checked = items.excludeApex;
   });
-  exclude_check.addEventListener("change", (e)=>{
-    chrome.storage.sync.set({excludeApex: e.target.checked});
+  exclude_check.addEventListener("change", (e) => {
+    common.options.excludeApex = e.target.checked;
+    if (common.form.querySelector("input[name='name']").value !== "") {
+      common.form.dispatchEvent(new Event("submit"));
+    }
   });
 
   // label
@@ -87,7 +90,7 @@
   // 레전드 버튼 공통 설정
   let l_btn = document.createElement("button");
   l_btn.type = "button";
-  l_btn.class = "ex-legend-btn";
+  l_btn.className = "ex-legend-btn";
   l_btn.style.minWidth = "50px";
   l_btn.style.border = "1px solid #dc3545";
   l_btn.style.borderRadius = "5px";
@@ -97,7 +100,7 @@
   // 소재 버튼 공통 설정
   let e_btn = document.createElement("button");
   e_btn.type = "button";
-  e_btn.class = "ex-value-btn";
+  e_btn.className = "ex-value-btn";
   e_btn.style.minWidth = "50px";
   e_btn.style.margin = "0px 3px";
   e_btn.style.border = "1px solid #cc3333";
@@ -108,7 +111,7 @@
   // 괴이화 소재 검색 옵션을 td에 추가한다
   let extra_td = common.form.querySelector("td#extra");
   let extras = [
-    ["없음"],
+    [""],
     ["뼈", "가죽"],
     ["용골", "피"],
     ["비늘", "갑각"],
@@ -128,7 +131,7 @@
 
     for (let extra of extras[index]) {
       let new_btn = e_btn.cloneNode();
-      new_btn.innerText = extra;
+      new_btn.innerText = extra ? extra : "없음";
       new_btn.value = extra;
       new_fieldset.append(new_btn);
     }
