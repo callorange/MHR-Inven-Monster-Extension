@@ -669,7 +669,7 @@
         aquatic: false,
         franged: false,
       },
-      comment: "진흙구리로 코피 가능",
+      comment: "코피->진흙구리로 가능",
     },
     {
       name: "원호룡마가이마가도",
@@ -773,7 +773,7 @@
         aquatic: true,
         franged: false,
       },
-      comment: "진흙상태:수속/뇌속(X)",
+      comment: "진흙상태:수속(O)/뇌속(X)",
     },
     {
       name: "독요조푸케푸케",
@@ -847,7 +847,7 @@
         aquatic: false,
         franged: false,
       },
-      comment: "머리부파: 타격<br>진흙상태:수속/화속(X)",
+      comment: "머리부파->타격<br>진흙상태:수속(O)/화속(X)",
     },
     {
       name: "수괴수로아루드로스",
