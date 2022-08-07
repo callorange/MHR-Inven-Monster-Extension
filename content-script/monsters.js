@@ -1,4 +1,8 @@
 /**
+ * 몬스터 정보
+ */
+
+/**
  * @typedef {Object} MonsterInfo 몬스터 정보 객체
  * @property {String} name 이름. 인벤 몬스터 페이지에 세팅된 이름이어야함.
  * @property {Object} ex 괴이화 정보
@@ -900,3 +904,10 @@
         comment: "",
     }
 ];
+
+/**
+ * 몬스터 정보를 세팅한다.
+ */
+(function() {
+    console.log(common.table.body);
+})();
