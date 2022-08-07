@@ -72,7 +72,7 @@
     let excludeApex = common.options.excludeApex;
     for (let el of common.table.body.querySelectorAll("tr")) {
       let display = el.dataset.exLevel == e.target.value ? true : false;
-      if (excludeApex && common.func.checkApexElement(target)) {
+      if (excludeApex && common.func.checkApexElement(el)) {
         display = false;
       }
       el.style.display = display ? "table-row" : "none";
@@ -87,7 +87,7 @@
     let excludeApex = common.options.excludeApex;
     for (let el of common.table.body.querySelectorAll("tr")) {
       let display = el.dataset.exValue == e.target.value ? true : false;
-      if (excludeApex && common.func.checkApexElement(target)) {
+      if (excludeApex && common.func.checkApexElement(el)) {
         display = false;
       }
       el.style.display = display ? "table-row" : "none";
