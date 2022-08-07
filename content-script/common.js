@@ -1,0 +1,74 @@
+/**
+ * content-script에서 사용되는 공통 변수/함수
+ */
+
+/**
+ *  @typedef {Object} CommonInfo
+ *  @property {HTMLFormElement} form 인벤 몬스터 페이지 검색 폼
+ *  @property {Object} option 검색 옵션
+ *  @property {Boolean} option.excludeApex 검색 옵션
+ *  @property {Object} table 몬스터 테이블 객체
+ *  @property {HTMLTableElement} table.all 몬스터테이블
+ *  @property {HTMLTableColElement} table.colgroup 몬스터테이블 colgroup
+ *  @property {HTMLTableSectionElement} table.head 몬스터테이블 head
+ *  @property {HTMLTableSectionElement} table.body 몬스터테이블 body
+ *  @property {Object} star 인벤 별이미지 객체
+ *  @property {String} star.zero X 이미지 HTML => 별 0개
+ *  @property {String} star.one 별이미지 1개 HTML
+ *  @property {Object} func 함수 객체
+ *  @property {Function} func.checkApexElement tr.dataset.name에 '주인'이 포함되었는지 리턴
+ */
+
+/** @type {CommonInfo} content-script에서 공통으로 사용할 변수 객체 */
+const common = (function () {
+  /** @type {HTMLFormElement} 검색폼 */
+  let filter_form = document.querySelector(".filter_form");
+
+  /** @type {HTMLTableElement} 몬스터 테이블 */
+  let m_table = document.querySelector(".table.list");
+
+  /** @type {HTMLTableColElement} 몬스터 테이블 colgroup */
+  let m_table_colgroup = m_table.querySelector("colgroup");
+
+  /** @type {HTMLTableSectionElement} 몬스터 테이블 head */
+  let m_table_head = m_table.querySelector("thead");
+
+  /** @type {HTMLTableSectionElement} 몬스터 테이블 body */
+  let m_table_body = m_table.querySelector("tbody");
+
+  /** @type {String} 인벤 X 이미지 HTML */
+  let star_0 = `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_x.png" class="icon_img2">`;
+
+  /** @type {String} 인벤 별 이미지 HTML */
+  let star_1 = `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_star.png" class="icon_img2">`;
+
+  return {
+    form: filter_form,
+    options: {
+      get excludeApex() {
+        return filter_form.querySelector("input#excludeApex").checked;
+      },
+      set excludeApex(value) {
+        chrome.storage.sync.set({ excludeApex: value });
+      },
+    },
+    table: {
+      all: m_table,
+      colgroup: m_table_colgroup,
+      head: m_table_head,
+      body: m_table_body,
+    },
+    star: {
+      zero: star_0,
+      one: star_1,
+    },
+    func: {
+      checkApexElement: function (element) {
+        if (element.dataset.name.includes("주인")) {
+            return true;
+        }
+        return false;
+      },
+    },
+  };
+})();
