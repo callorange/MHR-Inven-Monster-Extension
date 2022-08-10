@@ -121,8 +121,8 @@
     {
       name: "천인룡셀레기오스",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉뿔",
       },
       anti: {
         aerial: true,
@@ -166,8 +166,8 @@
     {
       name: "전룡라이젝스",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉비늘",
       },
       anti: {
         aerial: true,
@@ -181,8 +181,8 @@
     {
       name: "빙랑룡루나가론",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉뼈",
       },
       anti: {
         aerial: false,
@@ -196,8 +196,8 @@
     {
       name: "용옹룡오로미도로 아종",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉뼈",
       },
       anti: {
         aerial: false,
@@ -296,7 +296,7 @@
         franged: false,
         small: false,
       },
-      comment: "",
+      comment: "껍질부파->타격",
     },
     {
       name: "천혜룡영묘한 광채의 발파루크",
@@ -540,8 +540,8 @@
     {
       name: "각룡디아블로스",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉뿔",
       },
       anti: {
         aerial: true,
@@ -555,8 +555,8 @@
     {
       name: "굉룡티가렉스",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉뼈",
       },
       anti: {
         aerial: true,
@@ -570,8 +570,8 @@
     {
       name: "뇌랑룡진오우거",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉뿔",
       },
       anti: {
         aerial: false,
@@ -600,8 +600,8 @@
     {
       name: "화룡리오레우스",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉비늘",
       },
       anti: {
         aerial: true,
@@ -630,8 +630,8 @@
     {
       name: "포호룡타마미츠네",
       ex: {
-        level: 0,
-        value: "",
+        level: 5,
+        value: "흉비늘",
       },
       anti: {
         aerial: false,
