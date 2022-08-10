@@ -78,7 +78,7 @@
   // 필드셋 공통 설정
   let fieldset = document.createElement("fieldset");
   fieldset.style.display = "inline-block";
-  fieldset.style.marginRight = "15px";
+  fieldset.style.marginRight = "10px";
   fieldset.style.padding = "5px";
   fieldset.style.border = "1px solid #dc3545";
   fieldset.style.borderRadius = "5px";
@@ -91,7 +91,7 @@
   let l_btn = document.createElement("button");
   l_btn.type = "button";
   l_btn.className = "ex-legend-btn";
-  l_btn.style.minWidth = "50px";
+  l_btn.style.minWidth = "40px";
   l_btn.style.border = "1px solid #dc3545";
   l_btn.style.borderRadius = "5px";
   l_btn.style.backgroundColor = "#fff";
@@ -101,7 +101,7 @@
   let e_btn = document.createElement("button");
   e_btn.type = "button";
   e_btn.className = "ex-value-btn";
-  e_btn.style.minWidth = "50px";
+  e_btn.style.minWidth = "40px";
   e_btn.style.margin = "0px 3px";
   e_btn.style.border = "1px solid #cc3333";
   e_btn.style.borderRadius = "5px";
@@ -116,6 +116,7 @@
     ["용골", "피"],
     ["비늘", "갑각"],
     ["발톱", "이빨"],
+    ["흉뼈", "흉비늘", "흉뿔"],
   ];
 
   for (let index = 0; index < extras.length; index++) {
