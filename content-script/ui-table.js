@@ -7,7 +7,7 @@
  */
 (function () {
   common.table.all.tableLayout = "auto";
-  common.table.colgroup.innerHTML = `<col width="10%"><col width="*"><col width="5%"><col width="15%"><col width="10%"><col width="11%"><col width="15%"><col width="12%">`;
+  common.table.colgroup.innerHTML = `<col width="10%"><col width="*"><col width="7%"><col width="16%"><col width="10%"><col width="11%"><col width="8%"><col width="15%">`;
 })();
 
 /**
@@ -19,7 +19,7 @@
   anti_th.innerHTML = "특효";
 
   // thead에 th 추가
-  common.table.head.querySelector("tr").append(anti_th);
+  common.table.head.querySelector("tr").append(anti_th, common.table.head.querySelector("th.parts"));
 })();
 
 /**
@@ -65,15 +65,15 @@
       element.append(new_anti_td);
     } else {
       let anti_array = [];
-      anti_array[0] = "공[공서계]" + starImgHtml(el_data.aerial);
-      anti_array[1] = "룡[용특효]" + starImgHtml(el_data.dragon);
-      anti_array[2] = "류[수서계]" + starImgHtml(el_data.aquatic);
-      anti_array[3] = "수[아수종]" + starImgHtml(el_data.franged);
+      anti_array[0] = "공:" + starImgHtml(el_data.aerial);
+      anti_array[1] = "룡:" + starImgHtml(el_data.dragon);
+      anti_array[2] = "류:" + starImgHtml(el_data.aquatic);
+      anti_array[3] = "수:" + starImgHtml(el_data.franged);
 
       new_anti_td = anti_td.cloneNode();
       new_anti_td.innerHTML = `${anti_array.join("<br>")}`;
 
-      element.append(new_anti_td);
+      element.append(new_anti_td, element.querySelector("td.parts"));
     }
   }
 })();
