@@ -90,7 +90,7 @@
   // 레전드 버튼 공통 설정
   let l_btn = document.createElement("button");
   l_btn.type = "button";
-  l_btn.className = "ex-legend-btn";
+  l_btn.className = "anomaly-legend-btn";
   l_btn.style.minWidth = "40px";
   l_btn.style.border = "1px solid #dc3545";
   l_btn.style.borderRadius = "5px";
@@ -98,15 +98,15 @@
   l_btn.style.color = "#dc3545";
 
   // 소재 버튼 공통 설정
-  let e_btn = document.createElement("button");
-  e_btn.type = "button";
-  e_btn.className = "ex-value-btn";
-  e_btn.style.minWidth = "40px";
-  e_btn.style.margin = "0px 3px";
-  e_btn.style.border = "1px solid #cc3333";
-  e_btn.style.borderRadius = "5px";
-  e_btn.style.backgroundColor = "#cc3333";
-  e_btn.style.color = "#fff";
+  let a_btn = document.createElement("button");
+  a_btn.type = "button";
+  a_btn.className = "anomaly-afflicted-btn";
+  a_btn.style.minWidth = "40px";
+  a_btn.style.margin = "0px 3px";
+  a_btn.style.border = "1px solid #cc3333";
+  a_btn.style.borderRadius = "5px";
+  a_btn.style.backgroundColor = "#cc3333";
+  a_btn.style.color = "#fff";
 
   // 괴이화 소재 검색 옵션을 td에 추가한다
   let extra_td = common.form.querySelector("td#extra");
@@ -119,7 +119,7 @@
     ["흉뼈", "흉비늘", "흉뿔"],
   ];
 
-  for (let index = 0; index < extras.length; index++) {
+  for (let index = 1; index < extras.length; index++) {
     let new_fieldset = fieldset.cloneNode();
 
     let new_legend = legend.cloneNode();
@@ -131,7 +131,7 @@
     new_legend.append(new_btn);
 
     for (let extra of extras[index]) {
-      let new_btn = e_btn.cloneNode();
+      let new_btn = a_btn.cloneNode();
       new_btn.innerText = extra ? extra : "없음";
       new_btn.value = extra;
       new_fieldset.append(new_btn);

@@ -1059,7 +1059,7 @@
       default_monster;
 
     element.dataset.anomalyLevel = current_monster.anomaly.level;
-    element.dataset.anomalyAfflicted = current_monster.anomaly.afflicted.join(" ");
+    element.dataset.anomalyAfflicted = current_monster.anomaly.afflicted;
     element.dataset.antiAerial = current_monster.anti.aerial;
     element.dataset.antiDragon = current_monster.anti.dragon;
     element.dataset.antiAquatic = current_monster.anti.aquatic;
