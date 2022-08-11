@@ -40,7 +40,7 @@
 
     // 괴이화 정보 추가
     if (Number(el_data.anomalyLevel)) {
-      let ex_html = `<br><strong style='color:#dc3545;'>Ex ${el_data.anomalyLevel}. ${el_data.anomalyAfflicted.replace(",", "/")}</strong>`;
+      let ex_html = `<br><strong style='color:#dc3545;'>Ex ${el_data.anomalyLevel}. ${el_data.anomalyAfflicted}</strong>`;
       el_name.innerHTML = `${el_name.innerHTML}${ex_html}`;
     }
 
