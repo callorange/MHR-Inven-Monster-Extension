@@ -57,6 +57,7 @@
   // td를 만든다.
   let extra_td = document.createElement("td");
   extra_td.id = "extra";
+  extra_td.style.display = "flex";
 
   // th 만들기
   let extra_th = document.createElement("th");
@@ -78,7 +79,8 @@
   // 필드셋 공통 설정
   let fieldset = document.createElement("fieldset");
   fieldset.style.display = "inline-block";
-  fieldset.style.marginRight = "15px";
+  fieldset.style.marginRight = "5px";
+  fieldset.style.marginBottom = "5px";
   fieldset.style.padding = "5px";
   fieldset.style.border = "1px solid #dc3545";
   fieldset.style.borderRadius = "5px";
@@ -90,32 +92,33 @@
   // 레전드 버튼 공통 설정
   let l_btn = document.createElement("button");
   l_btn.type = "button";
-  l_btn.className = "ex-legend-btn";
-  l_btn.style.minWidth = "50px";
+  l_btn.className = "anomaly-legend-btn";
+  l_btn.style.minWidth = "40px";
   l_btn.style.border = "1px solid #dc3545";
   l_btn.style.borderRadius = "5px";
   l_btn.style.backgroundColor = "#fff";
   l_btn.style.color = "#dc3545";
 
   // 소재 버튼 공통 설정
-  let e_btn = document.createElement("button");
-  e_btn.type = "button";
-  e_btn.className = "ex-value-btn";
-  e_btn.style.minWidth = "50px";
-  e_btn.style.margin = "0px 3px";
-  e_btn.style.border = "1px solid #cc3333";
-  e_btn.style.borderRadius = "5px";
-  e_btn.style.backgroundColor = "#cc3333";
-  e_btn.style.color = "#fff";
+  let a_btn = document.createElement("button");
+  a_btn.type = "button";
+  a_btn.className = "anomaly-afflicted-btn";
+  a_btn.style.minWidth = "40px";
+  a_btn.style.margin = "1px 3px";
+  a_btn.style.border = "1px solid #cc3333";
+  a_btn.style.borderRadius = "5px";
+  a_btn.style.backgroundColor = "#cc3333";
+  a_btn.style.color = "#fff";
 
   // 괴이화 소재 검색 옵션을 td에 추가한다
   let extra_td = common.form.querySelector("td#extra");
   let extras = [
     [""],
-    ["뼈", "가죽"],
-    ["용골", "피"],
-    ["비늘", "갑각"],
-    ["발톱", "이빨"],
+    ["뼈/견골", "가죽/가죽+"],
+    ["용골/견룡골", "피/깨끗한피"],
+    ["비늘/비늘+", "갑각/견갑각"],
+    ["발톱/첨예발톱", "이빨/이빨+"],
+    ["흉뼈", "흉비늘", "흉뿔"],
   ];
 
   for (let index = 0; index < extras.length; index++) {
@@ -130,10 +133,11 @@
     new_legend.append(new_btn);
 
     for (let extra of extras[index]) {
-      let new_btn = e_btn.cloneNode();
-      new_btn.innerText = extra ? extra : "없음";
+      let new_btn = a_btn.cloneNode();
       new_btn.value = extra;
+      new_btn.innerText = extra ? extra : "없음";
       new_fieldset.append(new_btn);
+      new_fieldset.append(document.createElement("br"));
     }
 
     extra_td.append(new_fieldset);
