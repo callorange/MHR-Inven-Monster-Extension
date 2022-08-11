@@ -44,6 +44,66 @@
    */
   const monsters = [
     {
+      name: "폭린룡홍련의 솟구치는 바젤기우스",
+      ex: {
+        level: 0,
+        value: "",
+      },
+      anti: {
+        aerial: true,
+        dragon: true,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      comment: "",
+    },
+    {
+      name: "은화룡리오레우스 희소종",
+      ex: {
+        level: 0,
+        value: "",
+      },
+      anti: {
+        aerial: true,
+        dragon: true,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      comment: "",
+    },
+    {
+      name: "금화룡리오레이아 희소종",
+      ex: {
+        level: 0,
+        value: "",
+      },
+      anti: {
+        aerial: true,
+        dragon: true,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      comment: "",
+    },
+    {
+      name: "월신룡나르가쿠르가 희소종",
+      ex: {
+        level: 0,
+        value: "",
+      },
+      anti: {
+        aerial: true,
+        dragon: true,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      comment: "",
+    },
+    {
       name: "명연룡가이아델름",
       ex: {
         level: 0,
@@ -296,7 +356,7 @@
         franged: false,
         small: false,
       },
-      comment: "껍질부파->타격",
+      comment: "",
     },
     {
       name: "천혜룡영묘한 광채의 발파루크",

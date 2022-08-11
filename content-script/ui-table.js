@@ -7,7 +7,7 @@
  */
 (function () {
   common.table.all.tableLayout = "auto";
-  common.table.colgroup.innerHTML = `<col width="10%"><col width="*"><col width="7%"><col width="16%"><col width="10%"><col width="11%"><col width="8%"><col width="15%">`;
+  common.table.colgroup.innerHTML = `<col width="11%"><col width="*"><col width="6%"><col width="16%"><col width="10%"><col width="11%"><col width="8%"><col width="15%">`;
 })();
 
 /**
