@@ -73,7 +73,7 @@
   function find_ex_level(e) {
     let excludeApex = common.options.excludeApex;
     for (let el of common.table.body.querySelectorAll("tr")) {
-      let display = el.dataset.exLevel == e.target.value ? true : false;
+      let display = el.dataset.anomalyLevel == e.target.value ? true : false;
       if (excludeApex && common.func.checkApexElement(el)) {
         display = false;
       }
@@ -82,7 +82,7 @@
     // 검색폼이 viewport에 들어오도록
     common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
   }
-  for (let btn of common.form.querySelectorAll(".ex-legend-btn")) {
+  for (let btn of common.form.querySelectorAll(".anomaly-legend-btn")) {
     btn.addEventListener("click", find_ex_level);
   }
 
@@ -90,7 +90,7 @@
   function find_ex_value(e) {
     let excludeApex = common.options.excludeApex;
     for (let el of common.table.body.querySelectorAll("tr")) {
-      let display = el.dataset.exValue == e.target.value ? true : false;
+      let display = el.dataset.anomalyAfflicted.split(",").includes(e.target.value) ? true : false;
       if (excludeApex && common.func.checkApexElement(el)) {
         display = false;
       }
@@ -99,7 +99,7 @@
     // 검색폼이 viewport에 들어오도록
     common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
   }
-  for (let btn of common.form.querySelectorAll(".ex-value-btn")) {
+  for (let btn of common.form.querySelectorAll(".anomaly-afflicted-btn")) {
     btn.addEventListener("click", find_ex_value);
   }
 })();

@@ -7,7 +7,7 @@
  */
 (function () {
   common.table.all.tableLayout = "auto";
-  common.table.colgroup.innerHTML = `<col width="10%"><col width="*"><col width="5%"><col width="15%"><col width="10%"><col width="11%"><col width="15%"><col width="12%">`;
+  common.table.colgroup.innerHTML = `<col width="11%"><col width="*"><col width="6%"><col width="16%"><col width="10%"><col width="11%"><col width="8%"><col width="15%">`;
 })();
 
 /**
@@ -19,7 +19,7 @@
   anti_th.innerHTML = "특효";
 
   // thead에 th 추가
-  common.table.head.querySelector("tr").append(anti_th);
+  common.table.head.querySelector("tr").append(anti_th, common.table.head.querySelector("th.parts"));
 })();
 
 /**
@@ -39,8 +39,8 @@
     let el_name = element.querySelector("td.name");
 
     // 괴이화 정보 추가
-    if (Number(el_data.exLevel)) {
-      let ex_html = `<br><strong style='color:#dc3545;'>Ex${el_data.exLevel}. ${el_data.exValue}</strong>`;
+    if (Number(el_data.anomalyLevel)) {
+      let ex_html = `<br><strong style='color:#dc3545;'>Ex ${el_data.anomalyLevel}. ${el_data.anomalyAfflicted}</strong>`;
       el_name.innerHTML = `${el_name.innerHTML}${ex_html}`;
     }
 
@@ -60,20 +60,20 @@
     }
 
     // 특효정보 td 내용
-    if (el_data.small === "true") {
+    if (JSON.parse(el_data.antiSmall)) {
       new_anti_td = anti_td.cloneNode();
       element.append(new_anti_td);
     } else {
       let anti_array = [];
-      anti_array[0] = "공[공서계]" + starImgHtml(el_data.aerial);
-      anti_array[1] = "룡[용특효]" + starImgHtml(el_data.dragon);
-      anti_array[2] = "류[수서계]" + starImgHtml(el_data.aquatic);
-      anti_array[3] = "수[아수종]" + starImgHtml(el_data.franged);
+      anti_array[0] = "공:" + starImgHtml(el_data.antiAerial);
+      anti_array[1] = "룡:" + starImgHtml(el_data.antiDragon);
+      anti_array[2] = "류:" + starImgHtml(el_data.antiAquatic);
+      anti_array[3] = "수:" + starImgHtml(el_data.antiFranged);
 
       new_anti_td = anti_td.cloneNode();
       new_anti_td.innerHTML = `${anti_array.join("<br>")}`;
 
-      element.append(new_anti_td);
+      element.append(new_anti_td, element.querySelector("td.parts"));
     }
   }
 })();
