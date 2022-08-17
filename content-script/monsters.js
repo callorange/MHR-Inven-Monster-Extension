@@ -14,6 +14,8 @@
  * @property {Boolean} anti.aquatic 파수룡주(공서계 특효: 아수종 몬스터에게 주는 대미지 증가)
  * @property {Boolean} anti.franged 파류룡주(수서계 특효: 물가에서 사는 몬스터에게 주는 대미지 증가)
  * @property {Boolean} anti.small 파소룡주(소형 특효: 소형 몬스터에게 주는 대미지 증가)
+ * @property {String} element 추천 속성
+ * @property {Boolean} elembane 속통룡주 추천
  * @property {String} comment 추가 코멘트
  */
 
@@ -35,6 +37,8 @@
       franged: false,
       small: true,
     },
+    element: "",
+    elembane: false,
     comment: "",
   };
 
@@ -56,6 +60,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -71,6 +77,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: true,
       comment: "",
     },
     {
@@ -86,6 +94,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: false,
       comment: "",
     },
     {
@@ -101,6 +111,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -116,6 +128,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: true,
       comment: "",
     },
     {
@@ -131,6 +145,8 @@
         franged: true,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -146,6 +162,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: true,
       comment: "",
     },
     {
@@ -161,6 +179,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: true,
       comment: "",
     },
     {
@@ -176,6 +196,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: false,
       comment: "",
     },
     {
@@ -191,6 +213,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: false,
       comment: "",
     },
     {
@@ -206,6 +230,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: false,
       comment: "",
     },
     {
@@ -221,6 +247,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: false,
       comment: "",
     },
     {
@@ -236,6 +264,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: false,
       comment: "",
     },
     {
@@ -251,6 +281,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: false,
       comment: "",
     },
     {
@@ -266,6 +298,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: true,
       comment: "",
     },
     {
@@ -281,6 +315,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
     {
@@ -296,6 +332,8 @@
         franged: true,
         small: false,
       },
+      element: "빙",
+      elembane: false,
       comment: "",
     },
     {
@@ -311,6 +349,8 @@
         franged: false,
         small: false,
       },
+      element: "수,뇌",
+      elembane: false,
       comment: "",
     },
     {
@@ -326,6 +366,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -341,6 +383,8 @@
         franged: true,
         small: false,
       },
+      element: "수",
+      elembane: true,
       comment: "",
     },
     {
@@ -356,6 +400,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
     {
@@ -371,6 +417,8 @@
         franged: false,
         small: false,
       },
+      element: "",
+      elembane: false,
       comment: "",
     },
     {
@@ -386,6 +434,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: false,
       comment: "",
     },
     {
@@ -401,6 +451,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -416,6 +468,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: false,
       comment: "",
     },
     {
@@ -431,6 +485,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: false,
       comment: "",
     },
     {
@@ -446,6 +502,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: false,
       comment: "",
     },
     {
@@ -461,6 +519,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: false,
       comment: "",
     },
     {
@@ -476,6 +536,8 @@
         franged: true,
         small: false,
       },
+      element: "화",
+      elembane: false,
       comment: "",
     },
     {
@@ -491,6 +553,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: false,
       comment: "",
     },
     {
@@ -506,6 +570,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -521,6 +587,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: false,
       comment: "풍압->독 유효",
     },
     {
@@ -536,6 +604,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: false,
       comment: "",
     },
     {
@@ -551,6 +621,8 @@
         franged: false,
         small: false,
       },
+      element: "-",
+      elembane: false,
       comment: "",
     },
     {
@@ -566,6 +638,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: true,
       comment: "",
     },
     {
@@ -581,6 +655,8 @@
         franged: true,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -596,6 +672,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: false,
       comment: "",
     },
     {
@@ -611,6 +689,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -626,6 +706,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
     {
@@ -641,6 +723,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: false,
       comment: "",
     },
     {
@@ -656,6 +740,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -671,6 +757,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: true,
       comment: "",
     },
     {
@@ -686,6 +774,8 @@
         franged: true,
         small: false,
       },
+      element: "화",
+      elembane: false,
       comment: "",
     },
     {
@@ -701,6 +791,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: false,
       comment: "",
     },
     {
@@ -716,6 +808,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
     {
@@ -731,6 +825,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: true,
       comment: "코피->진흙구리로 가능",
     },
     {
@@ -746,6 +842,8 @@
         franged: false,
         small: false,
       },
+      element: "수,뇌",
+      elembane: false,
       comment: "",
     },
     {
@@ -761,6 +859,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: true,
       comment: "",
     },
     {
@@ -776,6 +876,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: false,
       comment: "",
     },
     {
@@ -791,6 +893,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: true,
       comment: "",
     },
     {
@@ -806,6 +910,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
     {
@@ -821,6 +927,8 @@
         franged: false,
         small: false,
       },
+      element: "용",
+      elembane: false,
       comment: "",
     },
     {
@@ -836,6 +944,8 @@
         franged: false,
         small: false,
       },
+      element: "수,뇌",
+      elembane: false,
       comment: "진흙상태:수속(O)/뇌속(X)",
     },
     {
@@ -851,6 +961,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
     {
@@ -866,6 +978,8 @@
         franged: true,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -881,6 +995,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
     {
@@ -896,6 +1012,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -911,6 +1029,8 @@
         franged: false,
         small: false,
       },
+      element: "화,수",
+      elembane: false,
       comment: "머리부파->타격<br>진흙상태:수속(O)/화속(X)",
     },
     {
@@ -926,6 +1046,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -941,6 +1063,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: true,
       comment: "",
     },
     {
@@ -956,6 +1080,8 @@
         franged: true,
         small: false,
       },
+      element: "수",
+      elembane: true,
       comment: "",
     },
     {
@@ -971,6 +1097,8 @@
         franged: true,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -986,6 +1114,8 @@
         franged: true,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -1001,6 +1131,8 @@
         franged: false,
         small: false,
       },
+      element: "빙",
+      elembane: true,
       comment: "",
     },
     {
@@ -1016,6 +1148,8 @@
         franged: false,
         small: false,
       },
+      element: "수",
+      elembane: false,
       comment: "",
     },
     {
@@ -1031,6 +1165,8 @@
         franged: false,
         small: false,
       },
+      element: "화",
+      elembane: true,
       comment: "",
     },
     {
@@ -1046,6 +1182,8 @@
         franged: false,
         small: false,
       },
+      element: "뇌",
+      elembane: true,
       comment: "",
     },
   ];
@@ -1065,6 +1203,8 @@
     element.dataset.antiAquatic = current_monster.anti.aquatic;
     element.dataset.antiFranged = current_monster.anti.franged;
     element.dataset.antiSmall = current_monster.anti.small;
+    element.dataset.element = current_monster.element;
+    element.dataset.elembane = current_monster.elembane;
     element.dataset.comment = current_monster.comment;
   }
 })();

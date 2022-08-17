@@ -71,7 +71,7 @@
       anti_array[3] = "수:" + starImgHtml(el_data.antiFranged);
 
       new_anti_td = anti_td.cloneNode();
-      new_anti_td.innerHTML = `${anti_array.join("<br>")}`;
+      new_anti_td.innerHTML = `${el_data.element}:${starImgHtml(el_data.elembane)}<hr style="margin:0px">${anti_array.join("<br>")}`;
 
       element.append(new_anti_td, element.querySelector("td.parts"));
     }
