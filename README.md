@@ -52,3 +52,8 @@
 
 ## 적용화면
 ![extension-installed](./imgs/result.png)
+
+
+## History
+- 0.7.0
+    - 속성 육질 추가
