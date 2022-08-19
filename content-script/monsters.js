@@ -61,7 +61,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -78,7 +78,7 @@
         small: false,
       },
       element: "수",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -95,7 +95,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -112,7 +112,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -129,7 +129,7 @@
         small: false,
       },
       element: "용",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -146,7 +146,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -163,7 +163,7 @@
         small: false,
       },
       element: "용",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -180,7 +180,7 @@
         small: false,
       },
       element: "용",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -197,7 +197,7 @@
         small: false,
       },
       element: "수",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -214,7 +214,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -231,7 +231,7 @@
         small: false,
       },
       element: "화",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -248,7 +248,7 @@
         small: false,
       },
       element: "빙",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -265,7 +265,7 @@
         small: false,
       },
       element: "빙",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -282,7 +282,7 @@
         small: false,
       },
       element: "화",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -299,7 +299,7 @@
         small: false,
       },
       element: "수",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -316,7 +316,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -333,7 +333,7 @@
         small: false,
       },
       element: "빙",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -349,9 +349,9 @@
         franged: false,
         small: false,
       },
-      element: "수,뇌",
-      elembane: false,
-      comment: "",
+      element: "수",
+      elembane: 2,
+      comment: "수속성 추천. 인벤이 수정 안함",
     },
     {
       name: "빙인어룡이소네미쿠니 아종",
@@ -367,7 +367,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -384,7 +384,7 @@
         small: false,
       },
       element: "수",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -401,7 +401,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -418,7 +418,7 @@
         small: false,
       },
       element: "",
-      elembane: false,
+      elembane: 0,
       comment: "",
     },
     {
@@ -435,7 +435,7 @@
         small: false,
       },
       element: "용",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -452,7 +452,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -469,7 +469,7 @@
         small: false,
       },
       element: "용",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -486,7 +486,7 @@
         small: false,
       },
       element: "빙",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -503,7 +503,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -520,7 +520,7 @@
         small: false,
       },
       element: "용",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -537,7 +537,7 @@
         small: false,
       },
       element: "화",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -554,7 +554,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -571,7 +571,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -588,7 +588,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: false,
+      elembane: 2,
       comment: "풍압->독 유효",
     },
     {
@@ -605,7 +605,7 @@
         small: false,
       },
       element: "수",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -622,8 +622,8 @@
         small: false,
       },
       element: "-",
-      elembane: false,
-      comment: "",
+      elembane: 0,
+      comment: "-",
     },
     {
       name: "풍신룡이부시마키히코",
@@ -639,7 +639,7 @@
         small: false,
       },
       element: "용",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -656,7 +656,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -673,7 +673,7 @@
         small: false,
       },
       element: "빙",
-      elembane: false,
+      elembane: 0,
       comment: "",
     },
     {
@@ -690,7 +690,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -707,8 +707,8 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
-      comment: "",
+      elembane: 3,
+      comment: "머리만 25",
     },
     {
       name: "뇌랑룡진오우거",
@@ -724,7 +724,7 @@
         small: false,
       },
       element: "빙",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -741,7 +741,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -758,7 +758,7 @@
         small: false,
       },
       element: "용",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -775,7 +775,7 @@
         small: false,
       },
       element: "화",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -792,7 +792,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -809,7 +809,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -826,7 +826,7 @@
         small: false,
       },
       element: "수",
-      elembane: true,
+      elembane: 3,
       comment: "코피->진흙구리로 가능",
     },
     {
@@ -843,7 +843,7 @@
         small: false,
       },
       element: "수,뇌",
-      elembane: false,
+      elembane: 0,
       comment: "",
     },
     {
@@ -860,7 +860,7 @@
         small: false,
       },
       element: "수",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -877,7 +877,7 @@
         small: false,
       },
       element: "화",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -894,7 +894,7 @@
         small: false,
       },
       element: "용",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -911,7 +911,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -928,7 +928,7 @@
         small: false,
       },
       element: "용",
-      elembane: false,
+      elembane: 1,
       comment: "",
     },
     {
@@ -945,7 +945,7 @@
         small: false,
       },
       element: "수,뇌",
-      elembane: false,
+      elembane: 1,
       comment: "진흙상태:수속(O)/뇌속(X)",
     },
     {
@@ -962,7 +962,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -979,7 +979,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -996,7 +996,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1013,7 +1013,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1030,7 +1030,7 @@
         small: false,
       },
       element: "화,수",
-      elembane: false,
+      elembane: 1,
       comment: "머리부파->타격<br>진흙상태:수속(O)/화속(X)",
     },
     {
@@ -1047,7 +1047,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1064,7 +1064,7 @@
         small: false,
       },
       element: "수",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1081,7 +1081,7 @@
         small: false,
       },
       element: "수",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1098,7 +1098,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1115,7 +1115,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1132,7 +1132,7 @@
         small: false,
       },
       element: "빙",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1149,7 +1149,7 @@
         small: false,
       },
       element: "수",
-      elembane: false,
+      elembane: 2,
       comment: "",
     },
     {
@@ -1166,7 +1166,7 @@
         small: false,
       },
       element: "화",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
     {
@@ -1183,7 +1183,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: true,
+      elembane: 3,
       comment: "",
     },
   ];
