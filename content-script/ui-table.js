@@ -70,7 +70,7 @@
       return anti_value === "true" ? "⭐" : "❌";
     }
     /**
-     * 특효정보에 따라 ❌⭐🌠✨ 이모지 리턴
+     * 특효정보에 따라 ❌🟡⚠️⭐🌟✨🌠 이모지 리턴
      * @param {Number} value 속통룡주 관련 정보
      * @return {String}
      */
@@ -79,11 +79,11 @@
       switch (value) {
         case 1:
         case "1":
-          result = "⭐";
+          result = "⚠️";
           break;
         case 2:
         case "2":
-          result = "🌠";
+          result = "⭐";
           break;
         case 3:
         case "3":
