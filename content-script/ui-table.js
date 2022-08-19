@@ -19,7 +19,9 @@
   anti_th.innerHTML = "특효";
 
   // thead에 th 추가
-  common.table.head.querySelector("tr").append(anti_th, common.table.head.querySelector("th.parts"));
+  common.table.head
+    .querySelector("tr")
+    .append(anti_th, common.table.head.querySelector("th.parts"));
 })();
 
 /**
@@ -59,19 +61,54 @@
       return anti_value === "true" ? common.star.one : common.star.zero;
     }
 
+    /**
+     * 특효정보에 따라 ⭐❌ 이모지 리턴
+     * @param {String} anti_value 특효정보
+     * @return {String}
+     */
+    function starEmoji(anti_value) {
+      return anti_value === "true" ? "⭐" : "❌";
+    }
+    /**
+     * 특효정보에 따라 ❌🟡⚠️⭐🌟✨🌠 이모지 리턴
+     * @param {Number} value 속통룡주 관련 정보
+     * @return {String}
+     */
+    function starEmoji2(value) {
+      let result = "❌";
+      switch (value) {
+        case 1:
+        case "1":
+          result = "⚠️";
+          break;
+        case 2:
+        case "2":
+          result = "⭐";
+          break;
+        case 3:
+        case "3":
+          result = "✨";
+          break;
+      }
+      return result;
+    }
+
     // 특효정보 td 내용
     if (JSON.parse(el_data.antiSmall)) {
       new_anti_td = anti_td.cloneNode();
       element.append(new_anti_td);
     } else {
       let anti_array = [];
-      anti_array[0] = "공:" + starImgHtml(el_data.antiAerial);
-      anti_array[1] = "룡:" + starImgHtml(el_data.antiDragon);
-      anti_array[2] = "류:" + starImgHtml(el_data.antiAquatic);
-      anti_array[3] = "수:" + starImgHtml(el_data.antiFranged);
+      anti_array[0] = "공:" + starEmoji(el_data.antiAerial);
+      anti_array[1] = "룡:" + starEmoji(el_data.antiDragon);
+      anti_array[2] = "류:" + starEmoji(el_data.antiAquatic);
+      anti_array[3] = "수:" + starEmoji(el_data.antiFranged);
+
+      let html1 = `${el_data.element}:${starEmoji2(el_data.elembane)}`;
+      let html2 = anti_array.join("<br>");
 
       new_anti_td = anti_td.cloneNode();
-      new_anti_td.innerHTML = `${el_data.element}:${starImgHtml(el_data.elembane)}<hr style="margin:0px">${anti_array.join("<br>")}`;
+      new_anti_td.innerHTML = `${html1}<hr style="margin:0px">${html2}`;
 
       element.append(new_anti_td, element.querySelector("td.parts"));
     }
