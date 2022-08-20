@@ -349,9 +349,9 @@
         franged: false,
         small: false,
       },
-      element: "수",
-      elembane: 2,
-      comment: "수속성 추천. 인벤이 수정 안함",
+      element: "수,뇌",
+      elembane: 0,
+      comment: "",
     },
     {
       name: "빙인어룡이소네미쿠니 아종",
