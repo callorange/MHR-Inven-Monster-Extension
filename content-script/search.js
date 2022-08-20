@@ -58,7 +58,7 @@
       }
     }
     // 검색폼이 viewport에 들어오도록
-    common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"});
   }
 
   // 검색창 전송 이벤트 연결
@@ -80,7 +80,7 @@
       el.style.display = display ? "table-row" : "none";
     }
     // 검색폼이 viewport에 들어오도록
-    common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"});
   }
   for (let btn of common.form.querySelectorAll(".anomaly-legend-btn")) {
     btn.addEventListener("click", find_ex_level);
@@ -97,7 +97,7 @@
       el.style.display = display ? "table-row" : "none";
     }
     // 검색폼이 viewport에 들어오도록
-    common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    common.form.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"});
   }
   for (let btn of common.form.querySelectorAll(".anomaly-afflicted-btn")) {
     btn.addEventListener("click", find_ex_value);

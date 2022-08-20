@@ -32,13 +32,21 @@
         - 주인몬스터는 자동으로 제외하도록 체크 가능
         - 체크 여부는 저장되어 자동 로드
 
+
 3. 몬스터 정보 추가
     1. 괴이화 정보 추가
     2. 특효 스킬 추가
+    3. 속성육질 정보 추가
+        - [출처: 디시 몬헌 갤러리](https://gall.dcinside.com/board/view/?id=monsterhunter&no=5921577&exception_mode=recommend&page=2)
+        - 속통룡주: ✨
+        - 약점특효-속성(실버솔): ⭐
+        - 속성육질15: ⚠️
+        - 안좋음: ❌
 
 ## 설치
 1. 압축파일을 다운로드 받는다.
-    - ![download-zip](./imgs/download-zip.png)
+    - ![download-zip](./imgs/download-zip1.png)
+    - ![download-zip](./imgs/download-zip2.png)
 2. 압축을 해제한다
     - ![extract-zip](./imgs/extract-zip.png)
 3. 확장프로그램 관리 페이지로 이동
@@ -57,3 +65,8 @@
 ## History
 - 0.7.0
     - 속성 육질 추가
+- 0.7.1
+    - 속성 육질에 따라 이모지 추가
+- 0.7.2
+    - 원망 마가도 정보 수정
+    - 검색시 화면 스크롤 위치 조정
