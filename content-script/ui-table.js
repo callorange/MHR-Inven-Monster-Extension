@@ -22,6 +22,44 @@
   common.table.head
     .querySelector("tr")
     .append(anti_th, common.table.head.querySelector("th.parts"));
+
+  // // thead에 search tr 추가
+  // let search_tr = document.createElement("tr");
+  // let blank_td = document.createElement("td");
+
+  // let name_td = blank_td.cloneNode();
+  // name_td.innerHTML = `<input type="text" name="search_name" style="width:90%">`;
+
+  // let anti_td = blank_td.cloneNode();
+  // anti_td.innerHTML =
+  //   `<select name="search_anti" style="width:90%">` +
+  //   `<option value="">-</option>` +
+  //   `<optgroup label="속통룡">` +
+  //   `<option value="화">화✨</option>` +
+  //   `<option value="수">수✨</option>` +
+  //   `<option value="뇌">뇌✨</option>` +
+  //   `<option value="빙">빙✨</option>` +
+  //   `<option value="용">용✨</option>` +
+  //   `</optgroup>` +
+  //   `<optgroup label="용특효">` +
+  //   `<option value="aerial">공</option>` +
+  //   `<option value="dragon">룡</option>` +
+  //   `<option value="aquatic">류</option>` +
+  //   `<option value="franged">수</option>` +
+  //   `</optgroup>` +
+  //   `</select>`;
+
+  // // tr에 td 추가
+  // search_tr.append(blank_td.cloneNode()); // 아이콘
+  // search_tr.append(name_td); // 이름
+  // search_tr.append(blank_td.cloneNode()); // 종별
+  // search_tr.append(blank_td.cloneNode()); // 약점부위
+  // search_tr.append(blank_td.cloneNode()); // 유효속성
+  // search_tr.append(blank_td.cloneNode()); // 상태이상
+  // search_tr.append(anti_td); // 특효
+  // search_tr.append(blank_td.cloneNode()); // 파괴부위
+  // // thead에 tr 추가
+  // common.table.head.append(search_tr);
 })();
 
 /**

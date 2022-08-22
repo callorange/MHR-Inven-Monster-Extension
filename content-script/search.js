@@ -27,6 +27,7 @@
   }
 
   // 이름 검색 폼이 전송될때 이벤트 처리
+  // 인벤에서 걸어놓은 기본 검색 이벤트도 수행 된다.
   function submitEvent(e) {
     let keywords = getKeywords();
 
