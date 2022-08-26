@@ -136,15 +136,25 @@
       new_anti_td = anti_td.cloneNode();
       element.append(new_anti_td);
     } else {
+      // 속성정보
+      let elements = el_data.element.split(",");
+      let elembanes = el_data.elembane.split(",").map(e=>starEmoji2(e));
+
+      let html1 = '';
+      elements.forEach((element, index) => {
+        html1 += `${element}:${elembanes[index]}<br>`;
+      });
+
+      // 특효주
       let anti_array = [];
       anti_array[0] = "공:" + starEmoji(el_data.antiAerial);
       anti_array[1] = "룡:" + starEmoji(el_data.antiDragon);
       anti_array[2] = "류:" + starEmoji(el_data.antiAquatic);
       anti_array[3] = "수:" + starEmoji(el_data.antiFranged);
 
-      let html1 = `${el_data.element}:${starEmoji2(el_data.elembane)}`;
       let html2 = anti_array.join("<br>");
 
+      // td 추가
       new_anti_td = anti_td.cloneNode();
       new_anti_td.innerHTML = `${html1}<hr style="margin:0px">${html2}`;
 
