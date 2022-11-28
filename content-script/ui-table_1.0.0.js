@@ -19,9 +19,12 @@
   anti_th.innerHTML = "특효";
 
   // thead에 th 추가
+  // common.table.head
+  // .querySelector("tr")
+  // .append(anti_th, common.table.head.querySelector("th.parts"));
   common.table.head
     .querySelector("tr")
-    .append(anti_th, common.table.head.querySelector("th.parts"));
+    .append(anti_th);
 
   // // thead에 search tr 추가
   // let search_tr = document.createElement("tr");
@@ -78,10 +81,22 @@
     // element name td
     let el_name = element.querySelector("td.name");
 
-    // 괴이화 정보 추가
+    // 괴이화 레벨/소재 추가
     if (Number(el_data.anomalyLevel)) {
-      let ex_html = `<br><strong style='color:#dc3545;'>Ex ${el_data.anomalyLevel}. ${el_data.anomalyAfflicted}</strong>`;
+      let ex_html = `<br><strong style='color:#dc3545;'>Ex ${el_data.anomalyLevel}</strong>`;
       el_name.innerHTML = `${el_name.innerHTML}${ex_html}`;
+    }
+
+    // 괴이화 소재 추가
+    if (el_data.anomalyAfflicted) {
+      let ex_level = Number(el_data.anomalyLevel);
+      let i = ex_level < 5 ? 0 : 3;
+      let color = ['#ff5687', '#c56520', '#ff4c17', '#9fccff', '#486eff', '#a43597'];
+      let ex_html = [];
+      el_data.anomalyAfflicted.split("/").forEach((value, index) => {
+        ex_html.push(`<strong style='color:${color[index+i]};'>${value}</strong>`);
+      });
+      el_name.innerHTML = `${el_name.innerHTML}<br>${ex_html.join('/')}`;
     }
 
     // 몬스터 추가 코멘트 작업
@@ -107,6 +122,7 @@
     function starEmoji(anti_value) {
       return anti_value === "true" ? "⭐" : "❌";
     }
+
     /**
      * 특효정보에 따라 ❌🟡⚠️⭐🌟✨🌠 이모지 리턴
      * @param {Number} value 속통룡주 관련 정보
@@ -158,7 +174,8 @@
       new_anti_td = anti_td.cloneNode();
       new_anti_td.innerHTML = `${html1}<hr style="margin:0px">${html2}`;
 
-      element.append(new_anti_td, element.querySelector("td.parts"));
+      // element.append(new_anti_td, element.querySelector("td.parts"));
+      element.append(new_anti_td);
     }
   }
 })();
