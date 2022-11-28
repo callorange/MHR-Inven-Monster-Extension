@@ -143,3 +143,34 @@
     extra_td.append(new_fieldset);
   }
 })();
+
+
+
+/**
+ * 검색창 괴이검색 내용
+ */
+(function (){
+  // td를 만든다.
+  let option_td = document.createElement("td");
+  option_td.id = "options";
+  option_td.innerHTML = ``
+  +`<table>`
+  +`<tr>`
+  +`<td>asdf</td>`
+  +`</tr>`
+  +`</table>`
+  ;
+
+  // th 만들기
+  let option_th = document.createElement("th");
+  option_th.innerText = "추가";
+
+  // tr 만들고 th, td 추가
+  let option_tr = document.createElement("tr");
+  option_tr.id = "extra_tr"
+  option_tr.append(option_th, option_td);
+
+  // tr을 테이블에 추가.
+  let searchBody = common.form.querySelector("tbody");
+  searchBody.append(option_tr);
+})();

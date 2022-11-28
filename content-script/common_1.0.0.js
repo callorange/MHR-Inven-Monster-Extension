@@ -21,46 +21,21 @@
 
 /** @type {CommonInfo} content-script에서 공통으로 사용할 변수 객체 */
 const common = (function () {
-  /** @type {HTMLFormElement} 검색폼 */
-  let filter_form = document.querySelector(".filter_form");
 
   /** @type {HTMLTableElement} 몬스터 테이블 */
   let m_table = document.querySelector(".table.list");
 
-  /** @type {HTMLTableColElement} 몬스터 테이블 colgroup */
-  let m_table_colgroup = m_table.querySelector("colgroup");
-
-  /** @type {HTMLTableSectionElement} 몬스터 테이블 head */
-  let m_table_head = m_table.querySelector("thead");
-
-  /** @type {HTMLTableSectionElement} 몬스터 테이블 body */
-  let m_table_body = m_table.querySelector("tbody");
-
-  /** @type {String} 인벤 X 이미지 HTML */
-  let star_0 = `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_x.png" class="icon_img2">`;
-
-  /** @type {String} 인벤 별 이미지 HTML */
-  let star_1 = `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_star.png" class="icon_img2">`;
-
   return {
-    form: filter_form,
-    options: {
-      get excludeApex() {
-        return filter_form.querySelector("input#excludeApex").checked;
-      },
-      set excludeApex(value) {
-        chrome.storage.sync.set({ excludeApex: value });
-      },
-    },
+    form: document.querySelector(".filter_form"),
     table: {
       all: m_table,
-      colgroup: m_table_colgroup,
-      head: m_table_head,
-      body: m_table_body,
+      colgroup: m_table.querySelector("colgroup"),
+      head: m_table.querySelector("thead"),
+      body: m_table.querySelector("tbody"),
     },
     star: {
-      zero: star_0,
-      one: star_1,
+      zero: `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_x.png" class="icon_img2">`,
+      one: `<img src="https://static.inven.co.kr/image_2011/mhf/common/14x14_star.png" class="icon_img2">`,
     },
     func: {
       checkApexElement: function (element) {
