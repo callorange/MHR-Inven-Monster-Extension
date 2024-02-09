@@ -133,15 +133,15 @@
       switch (value) {
         case 1:
         case "1":
-          result = "⚠️";
+          result = "⭐";
           break;
         case 2:
         case "2":
-          result = "⭐";
+          result = "⭐🌟";
           break;
         case 3:
         case "3":
-          result = "✨";
+          result = "⭐🌟✨";
           break;
       }
       return result;
