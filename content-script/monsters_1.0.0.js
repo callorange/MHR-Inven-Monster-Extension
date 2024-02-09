@@ -11,8 +11,8 @@
  * @property {Object} anti 특효스킬 정보
  * @property {Boolean} anti.aerial 파공룡주(아수종 특효: 비행 능력을 가진 몬스터에게 주는 대미지 증가)
  * @property {Boolean} anti.dragon 파룡룡주(용 특효: 조룡종, 비룡종, 수룡종, 해룡종, 어룡종, 아룡종 몬스터에게 주는 대미지 증가)
- * @property {Boolean} anti.aquatic 파수룡주(공서계 특효: 아수종 몬스터에게 주는 대미지 증가)
- * @property {Boolean} anti.franged 파류룡주(수서계 특효: 물가에서 사는 몬스터에게 주는 대미지 증가)
+ * @property {Boolean} anti.aquatic 파류룡주(수서계 특효: 물가에서 사는 몬스터에게 주는 대미지 증가)
+ * @property {Boolean} anti.franged 파수룡주(공서계 특효: 아수종 몬스터에게 주는 대미지 증가)
  * @property {Boolean} anti.small 파소룡주(소형 특효: 소형 몬스터에게 주는 대미지 증가)
  * @property {String} element 추천 속성
  * @property {Boolean} elembane 속통룡주 추천
@@ -717,7 +717,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: [1],
+      elembane: [2],
       comment: "",
     },
     {
@@ -829,7 +829,7 @@
       name: "원호룡원망 서린 마가이마가도",
       anomaly: {
         level: 7,
-        afflicted: "흉이빨/흉이빨+",
+        afflicted: "흉이빨/흉이빨+/흉중어금니",
       },
       anti: {
         aerial: false,
@@ -846,7 +846,7 @@
       name: "금사자격앙 라잔",
       anomaly: {
         level: 7,
-        afflicted: "흉이빨/흉이빨+",
+        afflicted: "흉이빨/흉이빨+/흉중어금니",
       },
       anti: {
         aerial: false,
@@ -864,7 +864,7 @@
       name: "극다룡에스피나스 아종",
       anomaly: {
         level: 7,
-        afflicted: "흉피/흉깨끗한피",
+        afflicted: "흉피/흉깨끗한피/흉농혈",
       },
       anti: {
         aerial: true,
@@ -881,7 +881,7 @@
       name: "폭린룡홍련의 솟구치는 바젤기우스",
       anomaly: {
         level: 7,
-        afflicted: "흉피/흉깨끗한피",
+        afflicted: "흉피/흉깨끗한피/흉농혈",
       },
       anti: {
         aerial: true,
@@ -899,7 +899,7 @@
       name: "은화룡리오레우스 희소종",
       anomaly: {
         level: 7,
-        afflicted: "흉익막/흉날개",
+        afflicted: "흉익막/흉날개/흉억센날개",
       },
       anti: {
         aerial: true,
@@ -916,7 +916,7 @@
       name: "금화룡리오레이아 희소종",
       anomaly: {
         level: 7,
-        afflicted: "흉익막/흉날개",
+        afflicted: "흉익막/흉날개/흉억센날개",
       },
       anti: {
         aerial: true,
@@ -927,6 +927,108 @@
       },
       element: "뇌",
       elembane: [1],
+      comment: "",
+    },
+    {
+      name: "하룡괴이 극복 오나즈치",
+      anomaly: {
+        level: 8,
+        afflicted: "(용골)/(견룡골)/(중용골)",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "화",
+      elembane: [3],
+      comment: "",
+    },
+    {
+      name: "염왕룡괴이 극복 테오-테스카토르",
+      anomaly: {
+        level: 8,
+        afflicted: "(용골)/(견룡골)/(중용골)",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "수",
+      elembane: [2],
+      comment: "",
+    },
+    {
+      name: "강룡괴이 극복 크샬다오라",
+      anomaly: {
+        level: 8,
+        afflicted: "(용골)/(견룡골)/(중용골)",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "뇌",
+      elembane: [2],
+      comment: "풍압->독 유효",
+    },
+    {
+      name: "흑식룡혼돈에 신음하는 고어-마가라",
+      anomaly: {
+        level: 8,
+        afflicted: "흉피/흉깨끗한피/흉농혈",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "용",
+      elembane: [2],
+      comment: "",
+    },
+    {
+      name: "천혜룡괴이 극복 발파루크",
+      anomaly: {
+        level: 9,
+        afflicted: "(용혈)/(정용혈)/(농용혈)",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "수,빙",
+      elembane: [1,1],
+      comment: "",
+    },
+    {
+      name: "천회룡괴이 극복 샤가르마가라",
+      anomaly: {
+        level: 9,
+        afflicted: "(용혈)/(정용혈)/(농용혈)",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "용",
+      elembane: [3],
       comment: "",
     },
 
@@ -1015,9 +1117,9 @@
         franged: false,
         small: false,
       },
-      element: "",
-      elembane: [0],
-      comment: "분노시 속성 망함.<br>흡기중가슴 수,빙(25) 뇌(20)",
+      element: "수,빙",
+      elembane: [1,1],
+      comment: "",
     },
     {
       name: "뇌신룡백룡 연원 나루하타타히메",
@@ -1100,12 +1202,80 @@
         franged: false,
         small: false,
       },
-      element: "-",
-      elembane: [0],
-      comment: "-",
+      element: "용",
+      elembane: [2],
+      comment: "",
     },
     {
       name: "풍신룡이부시마키히코",
+      anomaly: {
+        level: 0,
+        afflicted: "",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "용",
+      elembane: [3],
+      comment: "",
+    },
+    {
+      name: "염호룡타마미츠네 희소종",
+      anomaly: {
+        level: 0,
+        afflicted: "",
+      },
+      anti: {
+        aerial: false,
+        dragon: true,
+        aquatic: true,
+        franged: false,
+        small: false,
+      },
+      element: "빙",
+      elembane: [1],
+      comment: "",
+    },
+    {
+      name: "빙룡이베르카나",
+      anomaly: {
+        level: 0,
+        afflicted: "",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "화",
+      elembane: [3],
+      comment: "",
+    },
+    {
+      name: "폭풍룡아마츠마가츠치",
+      anomaly: {
+        level: 0,
+        afflicted: "",
+      },
+      anti: {
+        aerial: true,
+        dragon: false,
+        aquatic: false,
+        franged: false,
+        small: false,
+      },
+      element: "화,용",
+      elembane: [3,3],
+      comment: "화:뒷다리25<br>용:머리25",
+    },
+    {
+      name: "은작룡원초를 새기는 멜-제나",
       anomaly: {
         level: 0,
         afflicted: "",
