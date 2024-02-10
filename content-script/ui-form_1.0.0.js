@@ -11,7 +11,7 @@
 <style>
     #anomaly-search {border-collapse: collapse; table-layout: auto; width: 100%; word-break: keep-all;}
 
-    #anomaly-search thead th {padding: 1px 2px; background-color:#990000; color:white; border:1px solid #383b40; text-align:left;}
+    #anomaly-search thead th {position: sticky; top: 0px; padding: 1px 2px; background-color:#990000; color:white; border:1px solid #383b40; text-align:left;}
 
     #anomaly-search tbody th,
     #anomaly-search tbody td {padding: 5px 5px; background-color:#1f2023; color:#383b40; border:1px solid #383b40; font-weight:bold;}
@@ -157,13 +157,13 @@
         <td class="border0" colspan="9"></td>
         <td colspan="4"><a class="item color4">흉피</a></td>
         <td colspan="6"><a class="item color5">흉깨끗한피</a></td>
-        <td colspan="10"><a class="item color6">흉억센날개</a></td>
+        <td colspan="10"><a class="item color6">흉농혈</a></td>
     </tr>
     <tr>
         <td class="border0" colspan="9"></td>
         <td colspan="4"><a class="item color4">흉익막</a></td>
         <td colspan="6"><a class="item color5">흉날개</a></td>
-        <td colspan="10"><a class="item color6">흉농혈</a></td>
+        <td colspan="10"><a class="item color6">흉억센날개</a></td>
     </tr>
     
     <tr>
@@ -171,7 +171,7 @@
         <td class="border0" colspan="11"></td>
         <td colspan="4"><a class="item color4">(용골)</a></td>
         <td colspan="6"><a class="item color5">(견룡골)</a></td>
-        <td colspan="8"><a class="item color6">(중용골)</a></td>
+        <td colspan="8"><a class="item color6">(중룡골)</a></td>
     </tr>
     
     <tr>

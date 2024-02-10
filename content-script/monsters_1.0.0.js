@@ -457,8 +457,8 @@
         franged: false,
         small: false,
       },
-      element: "수,뇌",
-      elembane: [0,0],
+      element: "수",
+      elembane: [2],
       comment: "",
     },
     {
@@ -509,7 +509,7 @@
         small: false,
       },
       element: "뇌,빙",
-      elembane: [2,1],
+      elembane: [2,2],
       comment: "",
     },
 
@@ -527,7 +527,7 @@
         small: false,
       },
       element: "빙",
-      elembane: [0],
+      elembane: [1],
       comment: "",
     },
     {
@@ -578,7 +578,7 @@
         small: false,
       },
       element: "화",
-      elembane: [3],
+      elembane: [2],
       comment: "",
     },
 
@@ -630,7 +630,7 @@
         small: false,
       },
       element: "빙",
-      elembane: [1],
+      elembane: [2],
       comment: "",
     },
 
@@ -752,7 +752,7 @@
         small: false,
       },
       element: "빙",
-      elembane: [2],
+      elembane: [3],
       comment: "",
     },
     {
@@ -769,7 +769,7 @@
         small: false,
       },
       element: "화",
-      elembane: [2],
+      elembane: [1],
       comment: "",
     },
     {
@@ -787,7 +787,7 @@
       },
       element: "뇌",
       elembane: [2],
-      comment: "",
+      comment: "흥분시 머리 뇌속 20",
     },
 
     {
@@ -804,7 +804,7 @@
         small: false,
       },
       element: "수",
-      elembane: [2],
+      elembane: [3],
       comment: "",
     },
     {
@@ -838,8 +838,8 @@
         franged: false,
         small: false,
       },
-      element: "수,뇌",
-      elembane: [0,0],
+      element: "수",
+      elembane: [2],
       comment: "",
     },
     {
@@ -857,7 +857,7 @@
       },
       element: "빙",
       elembane: [3],
-      comment: "",
+      comment: "격앙상태:머리데미지",
     },
 
     {
@@ -873,8 +873,8 @@
         franged: false,
         small: false,
       },
-      element: "빙",
-      elembane: [2],
+      element: "수",
+      elembane: [3],
       comment: "",
     },
     {
@@ -933,7 +933,7 @@
       name: "하룡괴이 극복 오나즈치",
       anomaly: {
         level: 8,
-        afflicted: "(용골)/(견룡골)/(중용골)",
+        afflicted: "(용골)/(견룡골)/(중룡골)",
       },
       anti: {
         aerial: true,
@@ -950,7 +950,7 @@
       name: "염왕룡괴이 극복 테오-테스카토르",
       anomaly: {
         level: 8,
-        afflicted: "(용골)/(견룡골)/(중용골)",
+        afflicted: "(용골)/(견룡골)/(중룡골)",
       },
       anti: {
         aerial: true,
@@ -967,7 +967,7 @@
       name: "강룡괴이 극복 크샬다오라",
       anomaly: {
         level: 8,
-        afflicted: "(용골)/(견룡골)/(중용골)",
+        afflicted: "(용골)/(견룡골)/(중룡골)",
       },
       anti: {
         aerial: true,
@@ -977,7 +977,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: [2],
+      elembane: [1],
       comment: "풍압->독 유효",
     },
     {
@@ -1153,7 +1153,7 @@
       },
       element: "화",
       elembane: [3],
-      comment: "",
+      comment: "머리파괴->반투명",
     },
     {
       name: "강룡크샬다오라",
@@ -1169,7 +1169,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: [2],
+      elembane: [1],
       comment: "풍압->독 유효",
     },
     {
@@ -1270,9 +1270,9 @@
         franged: false,
         small: false,
       },
-      element: "화,용",
-      elembane: [3,3],
-      comment: "화:뒷다리25<br>용:머리25",
+      element: "화",
+      elembane: [3],
+      comment: "",
     },
     {
       name: "은작룡원초를 새기는 멜-제나",
@@ -1344,7 +1344,7 @@
         small: false,
       },
       element: "빙",
-      elembane: [1],
+      elembane: [2],
       comment: "",
     },
     {
@@ -1361,7 +1361,7 @@
         small: false,
       },
       element: "뇌",
-      elembane: [1],
+      elembane: [2],
       comment: "",
     },
     {
@@ -1395,7 +1395,7 @@
         small: false,
       },
       element: "화",
-      elembane: [2],
+      elembane: [3],
       comment: "",
     },
 
