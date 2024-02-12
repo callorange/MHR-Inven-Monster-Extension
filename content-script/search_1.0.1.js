@@ -7,7 +7,7 @@
  */
 (function () {
   function getKeywords() {
-    return common.form.querySelector("input[name='name']").value.replaceAll(',', '/').split("/");
+    return common.form.querySelector("input[name='name']").value.replaceAll(',', '/').split("/").filter((x)=>x.length>0);
   }
 
   function find_monsters(keyword) {
@@ -38,8 +38,15 @@
   // 이름 검색 폼이 전송될때 이벤트 처리
   // 인벤에서 걸어놓은 기본 검색 이벤트도 수행 된다.
   function submitEvent(e) {
-    for (let keyword of getKeywords()) {
-      for (let target of find_monsters(keyword)) {
+    let keywords = getKeywords();
+    if(keywords.length) {
+      for (let keyword of keywords) {
+        for (let target of find_monsters(keyword)) {
+          target.style.display = "table-row";
+        }
+      }
+    } else {
+      for (let target of common.table.body.querySelectorAll(`tr`)) {
         target.style.display = "table-row";
       }
     }
