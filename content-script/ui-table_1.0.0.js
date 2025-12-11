@@ -73,6 +73,8 @@
   let anti_td = document.createElement("td");
   anti_td.style.whiteSpace = "nowrap";
 
+  const colors = ['#ff5687', '#c56520', '#ff4c17', '#9fccff', '#486eff', '#a43597'];
+
   // tbody tr 순회
   for (let element of common.table.body.querySelectorAll("tr")) {
     // element dataset
@@ -91,10 +93,9 @@
     if (el_data.anomalyAfflicted) {
       let ex_level = Number(el_data.anomalyLevel);
       let i = ex_level < 5 ? 0 : 3;
-      let color = ['#ff5687', '#c56520', '#ff4c17', '#9fccff', '#486eff', '#a43597'];
       let ex_html = [];
       el_data.anomalyAfflicted.split("/").forEach((value, index) => {
-        ex_html.push(`<strong style='color:${color[index+i]};'>${value}</strong>`);
+        ex_html.push(`<strong style='color:${colors[index+i]};'>${value}</strong>`);
       });
       el_name.innerHTML = `${el_name.innerHTML}<br>${ex_html.join('/')}`;
     }

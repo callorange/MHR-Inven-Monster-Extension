@@ -1401,13 +1401,14 @@
 
   ];
 
+  const monstersMap = new Map();
+  monsters.forEach(monster => monstersMap.set(monster.name, monster));
+
   /**
    * 몬스터 정보 세팅
    */
   for (let element of common.table.body.querySelectorAll("tr")) {
-    let current_monster =
-      monsters.find((monster) => element.dataset.name == monster.name) ||
-      default_monster;
+    let current_monster = monstersMap.get(element.dataset.name) || default_monster;
 
     element.dataset.anomalyLevel = current_monster.anomaly.level;
     element.dataset.anomalyAfflicted = current_monster.anomaly.afflicted;
