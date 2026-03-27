@@ -64,6 +64,10 @@
 ## 적용화면
 ![extension-installed](./imgs/result_1.0.0.png)
 
+## 기여 및 에이전트 가이드 (Development & AI Agents)
+이 프로젝트의 유지보수 및 확장은 **Speckit AI Agent 프레임워크**를 적극 활용하여 관리됩니다. 에이전트 활용 및 컨벤션에 대해서는 다음 문서를 확인하세요:
+- [마스터 가이드 (AGENTS.md)](./AGENTS.md)
+- 기타 문서: `AGENTS_ROLES.md`, `AGENTS_STANDARDS.md`, `AGENTS_WORKFLOW.md`
 
 ## History
 - 0.7.0
@@ -83,3 +87,7 @@
     - 괴이 소재 추가 및 UI 변경
     - 몬스터 이름 검색 방법 변경
     - 기타 오류 수정
+- 1.0.2
+    - 몬스터 검색 데이터 구조 Map 적용을 통한 성능 최적화 (O(N) → O(1))
+    - UI 테이블 렌더링 시 중복 상수 선언 개선
+    - Speckit AI 에이전트 가이드라인 및 프로젝트 헌법 문서 도입
