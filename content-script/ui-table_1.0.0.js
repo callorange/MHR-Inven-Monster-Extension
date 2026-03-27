@@ -7,7 +7,7 @@
  */
 (function () {
   common.table.all.tableLayout = "auto";
-  common.table.colgroup.innerHTML = `<col width="11%"><col width="*"><col width="6%"><col width="16%"><col width="10%"><col width="11%"><col width="8%"><col width="15%">`;
+  common.table.colgroup.innerHTML = `<col width="11%"><col width="*"><col width="6%"><col width="16%"><col width="10%"><col width="11%"><col width="8%"><col width="10%">`;
 })();
 
 /**
@@ -73,7 +73,8 @@
   let anti_td = document.createElement("td");
   anti_td.style.whiteSpace = "nowrap";
 
-  const colors = ['#ff5687', '#c56520', '#ff4c17', '#9fccff', '#486eff', '#a43597'];
+  // Light Theme(흰색 인벤 배경) 환경에 최적화된 명도 대비(Contrast) 비비드 컬러 팔레트 배정
+  const colors = ['#d6336c', '#d9480f', '#e03131', '#1c7ed6', '#3b5bdb', '#9c36b5'];
 
   // tbody tr 순회
   for (let element of common.table.body.querySelectorAll("tr")) {
@@ -85,7 +86,7 @@
 
     // 괴이화 레벨/소재 추가
     if (Number(el_data.anomalyLevel)) {
-      let ex_html = `<br><strong style='color:#dc3545;'>Ex ${el_data.anomalyLevel}</strong>`;
+      let ex_html = `<div style='margin-top:6px;'><span style='display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; background:#fff0f6; color:#a61e4d; border:1px solid #faa2c1; box-shadow:0 1px 2px rgba(0,0,0,0.05);'>Ex ${el_data.anomalyLevel}</span></div>`;
       el_name.innerHTML = `${el_name.innerHTML}${ex_html}`;
     }
 
@@ -95,14 +96,14 @@
       let i = ex_level < 5 ? 0 : 3;
       let ex_html = [];
       el_data.anomalyAfflicted.split("/").forEach((value, index) => {
-        ex_html.push(`<strong style='color:${colors[index+i]};'>${value}</strong>`);
+        ex_html.push(`<span style='display:inline-block; padding:1px 5px; margin-right:4px; margin-top:4px; border-radius:3px; background:#f8f9fa; border:1px solid #dee2e6; color:${colors[index + i]}; font-size:11px; font-weight:700;'>${value}</span>`);
       });
-      el_name.innerHTML = `${el_name.innerHTML}<br>${ex_html.join('/')}`;
+      el_name.innerHTML = `${el_name.innerHTML}<div>${ex_html.join('')}</div>`;
     }
 
     // 몬스터 추가 코멘트 작업
     if (el_data.comment) {
-      let co_html = `<br><strong style='color:#28a745;'>${el_data.comment}</strong>`;
+      let co_html = `<div style='margin-top:4px;'><span style='display:inline-block; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:700; background:#eebefa; color:#862e9c; border:1px solid #e599f7;'>${el_data.comment}</span></div>`;
       el_name.innerHTML = `${el_name.innerHTML}${co_html}`;
     }
 
@@ -155,25 +156,35 @@
     } else {
       // 속성정보
       let elements = el_data.element.split(",");
-      let elembanes = el_data.elembane.split(",").map(e=>starEmoji2(e));
+      let elembanes = el_data.elembane.split(",").map(e => starEmoji2(e));
 
-      let html1 = '';
-      elements.forEach((element, index) => {
-        html1 += `${element}:${elembanes[index]}<br>`;
-      });
+      let html1 = elements.map((element, index) => {
+        return `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f1f3f5; padding:2px 0;">
+                  <span style="font-weight:700;">${element}</span>
+                  <span>${elembanes[index]}</span>
+                </div>`;
+      }).join('');
 
       // 특효주
       let anti_array = [];
-      anti_array[0] = "공:" + starEmoji(el_data.antiAerial);
-      anti_array[1] = "룡:" + starEmoji(el_data.antiDragon);
-      anti_array[2] = "류:" + starEmoji(el_data.antiAquatic);
-      anti_array[3] = "수:" + starEmoji(el_data.antiFranged);
+      anti_array[0] = { label: "공", value: starEmoji(el_data.antiAerial) };
+      anti_array[1] = { label: "룡", value: starEmoji(el_data.antiDragon) };
+      anti_array[2] = { label: "류", value: starEmoji(el_data.antiAquatic) };
+      anti_array[3] = { label: "수", value: starEmoji(el_data.antiFranged) };
 
-      let html2 = anti_array.join("<br>");
+      let html2 = anti_array.map(a => {
+        return `<div style="display:flex; justify-content:space-between; align-items:center; padding:1px 0;">
+                  <span>${a.label}</span>
+                  <span>${a.value}</span>
+                </div>`;
+      }).join('');
 
       // td 추가
       new_anti_td = anti_td.cloneNode();
-      new_anti_td.innerHTML = `${html1}<hr style="margin:0px">${html2}`;
+      // new_anti_td.style.minWidth = "60px";
+      new_anti_td.style.padding = "6px 12px";
+      new_anti_td.style.verticalAlign = "middle";
+      new_anti_td.innerHTML = `<div style="display:flex; flex-direction:column; width:100%;">${html1}<div style="height:4px;"></div>${html2}</div>`;
 
       // element.append(new_anti_td, element.querySelector("td.parts"));
       element.append(new_anti_td);

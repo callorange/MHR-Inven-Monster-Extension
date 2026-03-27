@@ -98,7 +98,7 @@
       elembane: [3],
       comment: "",
     },
-    
+
     {
       name: "겸유룡오사이즈치",
       anomaly: {
@@ -216,7 +216,7 @@
         small: false,
       },
       element: "화,수",
-      elembane: [1,1],
+      elembane: [1, 1],
       comment: "머리부파->타격<br>진흙상태:수속(O)/화속(X)",
     },
     {
@@ -389,7 +389,7 @@
         small: false,
       },
       element: "수,뇌",
-      elembane: [1,1],
+      elembane: [1, 1],
       comment: "진흙상태:수속(O)/뇌속(X)",
     },
     {
@@ -509,7 +509,7 @@
         small: false,
       },
       element: "뇌,빙",
-      elembane: [2,2],
+      elembane: [2, 2],
       comment: "",
     },
 
@@ -1011,7 +1011,7 @@
         small: false,
       },
       element: "수,빙",
-      elembane: [1,1],
+      elembane: [1, 1],
       comment: "",
     },
     {
@@ -1118,7 +1118,7 @@
         small: false,
       },
       element: "수,빙",
-      elembane: [1,1],
+      elembane: [1, 1],
       comment: "",
     },
     {
@@ -1291,7 +1291,7 @@
       elembane: [3],
       comment: "",
     },
-    
+
     /****************************************************************
      ****************************************************************
      ****************************************************************/
