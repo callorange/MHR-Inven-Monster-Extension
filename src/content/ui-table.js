@@ -93,11 +93,21 @@
     let el_data = element.dataset;
     let el_name = element.querySelector("td.name");
 
-    // --- A. 괴이화 레벨: 몬스터 사진 좌상단 플로팅 뱃지 부착 (10px 볼드) ---
+    // --- A. 괴이화 레벨: 몬스터 사진 좌상단 플로팅 뱃지 부착 (상단 매트릭스 레벨별 컬러 매핑) ---
     let ex_level = Number(el_data.anomalyLevel);
     if (ex_level > 0) {
       let el_icon = element.querySelector("td.icon") || element.querySelector("td:first-child");
       if (el_icon) {
+        // 상단 괴이 검색창의 레벨 그룹별 컬러와 동기화
+        let badgeBg = "linear-gradient(135deg, #db2777, #be185d)"; // EX1~4 (핑크/로즈)
+        if (ex_level === 5 || ex_level === 6) {
+          badgeBg = "linear-gradient(135deg, #0284c7, #0369a1)"; // EX5~6 (스카이블루)
+        } else if (ex_level === 7 || ex_level === 8) {
+          badgeBg = "linear-gradient(135deg, #4f46e5, #3730a3)"; // EX7~8 (인디고)
+        } else if (ex_level >= 9) {
+          badgeBg = "linear-gradient(135deg, #7c3aed, #5b21b6)"; // EX9 (바이올렛)
+        }
+
         let floatingBadge = document.createElement("span");
         floatingBadge.className = "anomaly-floating-badge";
         floatingBadge.innerText = `Ex ${ex_level}`;
@@ -106,7 +116,7 @@
           top: 2px;
           left: 2px;
           z-index: 2;
-          background: linear-gradient(135deg, #be123c, #881337);
+          background: ${badgeBg};
           color: #ffffff;
           font-size: 10px;
           font-weight: 800;
