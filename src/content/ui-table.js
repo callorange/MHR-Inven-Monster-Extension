@@ -24,7 +24,7 @@
 
   const guideBox = document.createElement("div");
   guideBox.id = "monster-table-guide";
-  guideBox.style.cssText = "box-sizing: border-box; width: 100%; margin: 8px auto 6px auto; padding: 6px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 11px; color: #475569; line-height: 1.6; letter-spacing: -0.2px;";
+  guideBox.style.cssText = "box-sizing: border-box; width: 100%; margin: 8px auto 6px auto; padding: 6px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 12px; color: #475569; line-height: 1.6; letter-spacing: -0.2px;";
   guideBox.innerHTML = `
     <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px;">
       <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
@@ -134,7 +134,7 @@
         let fontWeight = idx === 0 ? "500" : (idx === 1 ? "600" : "700");
         return `<span style='color:${itemColor}; font-weight:${fontWeight};'>${val}</span>`;
       });
-      let itemsHtml = itemSpans.join(`<span style='color:#cbd5e1; font-size:10px; margin:0 3px;'>➔</span>`);
+      let itemsHtml = itemSpans.join(`<span style='color:#64748b; font-size:10px; font-weight:700; margin:0 3px;'>➔</span>`);
       let flowHtml = `
         <div style='margin-top:4px; font-size:12px; line-height:1.3; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;'>
           ${itemsHtml}
@@ -143,7 +143,7 @@
       el_name.innerHTML = `${el_name.innerHTML}${flowHtml}`;
     }
 
-    // --- C. 몬스터 주요 팁 코멘트 추가 (11px 앰버 팁 뱃지 & 화살표 정제) ---
+    // --- C. 몬스터 주요 팁 코멘트 추가 (12px 앰버 팁 뱃지 & 화살표 정제) ---
     if (el_data.comment) {
       let formattedComment = el_data.comment
         .replaceAll("->", " ➔ ")
@@ -151,7 +151,7 @@
       
       let co_html = `
         <div style='margin-top:4px; display:flex; justify-content:center;'>
-          <span style='display:inline-flex; align-items:center; gap:3px; padding:2px 7px; border-radius:3px; font-size:11px; font-weight:700; background:#fffbeb; color:#92400e; border:1px solid #fde68a; line-height:1.3; text-align:center;'>
+          <span style='display:inline-flex; align-items:center; gap:3px; padding:2px 8px; border-radius:3px; font-size:12px; font-weight:700; background:#fffbeb; color:#92400e; border:1px solid #fde68a; line-height:1.3; text-align:center;'>
             <span>💡</span><span>${formattedComment}</span>
           </span>
         </div>

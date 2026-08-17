@@ -379,7 +379,7 @@
     
     const tipDiv = document.createElement("div");
     tipDiv.id = "search-syntax-tip";
-    tipDiv.style.cssText = "margin-top: 4px; font-size: 11px; color: #64748b; line-height: 1.4; letter-spacing: -0.2px;";
+    tipDiv.style.cssText = "margin-top: 4px; font-size: 12px; color: #64748b; line-height: 1.4; letter-spacing: -0.2px;";
     tipDiv.innerHTML = `
       <span style="font-weight: 700; color: #475569;">💡 검색 팁:</span> 
       <span style="color:#0284c7; font-weight:600;">A/B</span> 다중검색 &nbsp;|&nbsp; 
