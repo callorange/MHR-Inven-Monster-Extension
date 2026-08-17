@@ -1,193 +1,227 @@
 /**
- * 몬스터 테이블 ui 추가
+ * 몬스터 테이블 UI 확장 모듈 (제안 A: 유효속성 속통 병합 + 특효 물리 2칸 최적화 + 수직/중앙 정렬 + 폰트 밸런스 완비)
+ * 
+ * 1. 몬스터 사진 좌상단에 Ex 레벨 플로팅 뱃지 부착 (10px 볼드)
+ * 2. 몬스터 이름 하단에 단계별 괴이 소재 화살표 흐름(Stepped Flow: 12px) 및 코멘트(11px) '중앙 정렬' 렌더링
+ * 3. 인벤 기존 '유효속성' 컬럼에 속통룡주/약특 이모지(🌠, ⭐, ⚠️: 12px) 우측 '수직 일렬 정렬(Flex Space-between)' 병합
+ * 4. '특효' 컬럼에는 순수 물리 특효주(공/룡/류/수)만 유효 항목 1~2칸(12px)으로 심플하게 렌더링
  */
 
 /**
- * 몬스터 테이블 레이아웃 수정
+ * 1. 몬스터 테이블 레이아웃 최적화
  */
 (function () {
   common.table.all.tableLayout = "auto";
-  common.table.colgroup.innerHTML = `<col width="11%"><col width="*"><col width="6%"><col width="16%"><col width="10%"><col width="11%"><col width="8%"><col width="10%">`;
+  // 유효속성 컬럼 너비를 확보하고, 특효 컬럼 너비를 컴팩트하게 축소
+  common.table.colgroup.innerHTML = `<col width="10%"><col width="*"><col width="6%"><col width="16%"><col width="12%"><col width="11%"><col width="8%"><col width="7%">`;
 })();
 
 /**
- * 몬스터 테이블 thead 확장
+ * 2. 몬스터 테이블 상단 특효/속성 가이드 설명 바 주입
  */
 (function () {
-  // th 생성
+  if (!common.table.all) return;
+
+  const guideBox = document.createElement("div");
+  guideBox.id = "monster-table-guide";
+  guideBox.style.cssText = "box-sizing: border-box; width: 100%; margin: 8px auto 6px auto; padding: 6px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 11px; color: #475569; line-height: 1.6; letter-spacing: -0.2px;";
+  guideBox.innerHTML = `
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px;">
+      <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+        <div>
+          <strong style="color:#1e293b;">[유효속성]</strong> 
+          <span>🌠 속통룡주(25+)</span> &nbsp;
+          <span>⭐ 약특속성(20+)</span> &nbsp;
+          <span style="color:#94a3b8;">⚠️ 비추천</span>
+        </div>
+        <div style="border-left:1px solid #cbd5e1; padding-left:12px;">
+          <strong style="color:#1e293b;">[물리 특효]</strong> 
+          <span><strong style="color:#334155;">공:</strong> 파공(비행)</span> &nbsp;
+          <span><strong style="color:#334155;">룡:</strong> 파룡(용족)</span> &nbsp;
+          <span><strong style="color:#334155;">류:</strong> 파류(수서)</span> &nbsp;
+          <span><strong style="color:#334155;">수:</strong> 파수(아수)</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  common.table.all.insertAdjacentElement("beforebegin", guideBox);
+})();
+
+/**
+ * 3. 몬스터 테이블 thead 확장 ('특효' 헤더)
+ */
+(function () {
   let anti_th = document.createElement("th");
   anti_th.innerHTML = "특효";
-
-  // thead에 th 추가
-  // common.table.head
-  // .querySelector("tr")
-  // .append(anti_th, common.table.head.querySelector("th.parts"));
-  common.table.head
-    .querySelector("tr")
-    .append(anti_th);
-
-  // // thead에 search tr 추가
-  // let search_tr = document.createElement("tr");
-  // let blank_td = document.createElement("td");
-
-  // let name_td = blank_td.cloneNode();
-  // name_td.innerHTML = `<input type="text" name="search_name" style="width:90%">`;
-
-  // let anti_td = blank_td.cloneNode();
-  // anti_td.innerHTML =
-  //   `<select name="search_anti" style="width:90%">` +
-  //   `<option value="">-</option>` +
-  //   `<optgroup label="속통룡">` +
-  //   `<option value="화">화✨</option>` +
-  //   `<option value="수">수✨</option>` +
-  //   `<option value="뇌">뇌✨</option>` +
-  //   `<option value="빙">빙✨</option>` +
-  //   `<option value="용">용✨</option>` +
-  //   `</optgroup>` +
-  //   `<optgroup label="용특효">` +
-  //   `<option value="aerial">공</option>` +
-  //   `<option value="dragon">룡</option>` +
-  //   `<option value="aquatic">류</option>` +
-  //   `<option value="franged">수</option>` +
-  //   `</optgroup>` +
-  //   `</select>`;
-
-  // // tr에 td 추가
-  // search_tr.append(blank_td.cloneNode()); // 아이콘
-  // search_tr.append(name_td); // 이름
-  // search_tr.append(blank_td.cloneNode()); // 종별
-  // search_tr.append(blank_td.cloneNode()); // 약점부위
-  // search_tr.append(blank_td.cloneNode()); // 유효속성
-  // search_tr.append(blank_td.cloneNode()); // 상태이상
-  // search_tr.append(anti_td); // 특효
-  // search_tr.append(blank_td.cloneNode()); // 파괴부위
-  // // thead에 tr 추가
-  // common.table.head.append(search_tr);
+  common.table.head.querySelector("tr").append(anti_th);
 })();
 
 /**
- * 몬스터 테이블 tbody 확장
+ * 4. 몬스터 테이블 tbody 확장
  */
 (function () {
-  // td 생성 구문
   let anti_td = document.createElement("td");
   anti_td.style.whiteSpace = "nowrap";
 
-  // Light Theme(흰색 인벤 배경) 환경에 최적화된 명도 대비(Contrast) 비비드 컬러 팔레트 배정
+  // 괴이 소재 텍스트 컬러 팔레트
   const colors = ['#d6336c', '#d9480f', '#e03131', '#1c7ed6', '#3b5bdb', '#9c36b5'];
 
-  // tbody tr 순회
-  for (let element of common.table.body.querySelectorAll("tr")) {
-    // element dataset
-    let el_data = element.dataset;
+  /**
+   * 속통룡주 관련 정보에 따라 이모지 리턴
+   * @param {Number|String} value 
+   * @return {String}
+   */
+  function starEmoji2(value) {
+    let result = "";
+    switch (String(value).trim()) {
+      case "1":
+        result = "⚠️";
+        break;
+      case "2":
+        result = "⭐";
+        break;
+      case "3":
+        result = "🌠";
+        break;
+    }
+    return result;
+  }
 
-    // element name td
+  // tbody 내 몬스터 행 순회
+  for (let element of common.table.body.querySelectorAll("tr")) {
+    let el_data = element.dataset;
     let el_name = element.querySelector("td.name");
 
-    // 괴이화 레벨/소재 추가
-    if (Number(el_data.anomalyLevel)) {
-      let ex_html = `<div style='margin-top:6px;'><span style='display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; background:#fff0f6; color:#a61e4d; border:1px solid #faa2c1; box-shadow:0 1px 2px rgba(0,0,0,0.05);'>Ex ${el_data.anomalyLevel}</span></div>`;
-      el_name.innerHTML = `${el_name.innerHTML}${ex_html}`;
+    // --- A. 괴이화 레벨: 몬스터 사진 좌상단 플로팅 뱃지 부착 (10px 볼드) ---
+    let ex_level = Number(el_data.anomalyLevel);
+    if (ex_level > 0) {
+      let el_icon = element.querySelector("td.icon") || element.querySelector("td:first-child");
+      if (el_icon) {
+        let floatingBadge = document.createElement("span");
+        floatingBadge.className = "anomaly-floating-badge";
+        floatingBadge.innerText = `Ex ${ex_level}`;
+        floatingBadge.style.cssText = `
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          z-index: 2;
+          background: linear-gradient(135deg, #be123c, #881337);
+          color: #ffffff;
+          font-size: 10px;
+          font-weight: 800;
+          padding: 1px 5px;
+          border-radius: 3px;
+          line-height: 1.1;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+          pointer-events: none;
+          letter-spacing: -0.2px;
+        `;
+
+        let iconLink = el_icon.querySelector("a") || el_icon;
+        iconLink.style.position = "relative";
+        iconLink.style.display = "inline-block";
+        iconLink.appendChild(floatingBadge);
+      }
     }
 
-    // 괴이화 소재 추가
+    // --- B. 몬스터 이름 하단: 단계별 괴이 소재 화살표 흐름 (12px, 중앙 정렬) ---
     if (el_data.anomalyAfflicted) {
-      let ex_level = Number(el_data.anomalyLevel);
       let i = ex_level < 5 ? 0 : 3;
-      let ex_html = [];
-      el_data.anomalyAfflicted.split("/").forEach((value, index) => {
-        ex_html.push(`<span style='display:inline-block; padding:1px 5px; margin-right:4px; margin-top:4px; border-radius:3px; background:#f8f9fa; border:1px solid #dee2e6; color:${colors[index + i]}; font-size:11px; font-weight:700;'>${value}</span>`);
+      let items = el_data.anomalyAfflicted.split("/");
+      let itemSpans = items.map((val, idx) => {
+        let itemColor = colors[idx + i] || "#334155";
+        let fontWeight = idx === 0 ? "500" : (idx === 1 ? "600" : "700");
+        return `<span style='color:${itemColor}; font-weight:${fontWeight};'>${val}</span>`;
       });
-      el_name.innerHTML = `${el_name.innerHTML}<div>${ex_html.join('')}</div>`;
+      let itemsHtml = itemSpans.join(`<span style='color:#cbd5e1; font-size:10px; margin:0 3px;'>➔</span>`);
+      let flowHtml = `
+        <div style='margin-top:4px; font-size:12px; line-height:1.3; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;'>
+          ${itemsHtml}
+        </div>
+      `;
+      el_name.innerHTML = `${el_name.innerHTML}${flowHtml}`;
     }
 
-    // 몬스터 추가 코멘트 작업
+    // --- C. 몬스터 주요 팁 코멘트 추가 (11px 앰버 팁 뱃지 & 화살표 정제) ---
     if (el_data.comment) {
-      let co_html = `<div style='margin-top:4px;'><span style='display:inline-block; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:700; background:#eebefa; color:#862e9c; border:1px solid #e599f7;'>${el_data.comment}</span></div>`;
+      let formattedComment = el_data.comment
+        .replaceAll("->", " ➔ ")
+        .replaceAll("&gt;", " ➔ ");
+      
+      let co_html = `
+        <div style='margin-top:4px; display:flex; justify-content:center;'>
+          <span style='display:inline-flex; align-items:center; gap:3px; padding:2px 7px; border-radius:3px; font-size:11px; font-weight:700; background:#fffbeb; color:#92400e; border:1px solid #fde68a; line-height:1.3; text-align:center;'>
+            <span>💡</span><span>${formattedComment}</span>
+          </span>
+        </div>
+      `;
       el_name.innerHTML = `${el_name.innerHTML}${co_html}`;
     }
 
-    /**
-     * 특효정보에 따라 별 혹은 X 이미지 HTML을 리턴한다.
-     * @param {String} anti_value 특효정보
-     * @return {String}
-     */
-    function starImgHtml(anti_value) {
-      return anti_value === "true" ? common.star.one : common.star.zero;
-    }
+    // --- D. 인벤 기존 '유효속성' 컬럼(5번째 td)에 속통/약특 이모지(12px) 우측 일렬 정렬(Flex) 병합 ---
+    let allTds = element.querySelectorAll("td");
+    let el_attr_td = allTds[4]; // 인벤 유효속성 컬럼 (0:아이콘, 1:이름, 2:종별, 3:약점, 4:유효속성)
+    if (el_attr_td && el_data.element) {
+      let elements = el_data.element.split(",").map(e => e.trim());
+      let elembanes = el_data.elembane ? el_data.elembane.split(",").map(e => e.trim()) : [];
 
-    /**
-     * 특효정보에 따라 ⭐❌ 이모지 리턴
-     * @param {String} anti_value 특효정보
-     * @return {String}
-     */
-    function starEmoji(anti_value) {
-      return anti_value === "true" ? "⭐" : "❌";
-    }
+      let attrEmojiMap = {};
+      elements.forEach((elem, idx) => {
+        let emoji = starEmoji2(elembanes[idx] || "");
+        if (emoji) {
+          attrEmojiMap[elem] = emoji;
+        }
+      });
 
-    /**
-     * 특효정보에 따라 ❌🟡⚠️⭐🌟✨🌠 이모지 리턴
-     * @param {Number} value 속통룡주 관련 정보
-     * @return {String}
-     */
-    function starEmoji2(value) {
-      let result = "❌";
-      switch (value) {
-        case 1:
-        case "1":
-          result = "⚠️";
-          break;
-        case 2:
-        case "2":
-          result = "⭐";
-          break;
-        case 3:
-        case "3":
-          result = "🌠";
-          break;
+      // 인벤 유효속성 td의 각 라인을 <br>로 분리하여 Flex row로 재구성 (우측 수직 일렬 정렬)
+      let rawLines = el_attr_td.innerHTML.split(/<br\s*\/?>/i).filter(l => l.trim().length > 0);
+      if (rawLines.length > 0) {
+        let formattedLines = rawLines.map(line => {
+          let matchedAttr = ['화', '수', '뇌', '빙', '용'].find(a => line.includes(`${a}:`));
+          let emoji = matchedAttr && attrEmojiMap[matchedAttr] ? attrEmojiMap[matchedAttr] : "";
+          
+          return `
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; line-height:1.4;">
+              <span style="display:inline-flex; align-items:center;">${line.trim()}</span>
+              <span style="display:inline-block; min-width:16px; text-align:right; font-size:12px;">${emoji}</span>
+            </div>
+          `;
+        });
+        el_attr_td.innerHTML = `<div style="display:flex; flex-direction:column; width:100%; max-width:85px; margin:0 auto;">${formattedLines.join('')}</div>`;
       }
-      return result;
     }
 
-    // 특효정보 td 내용
-    if (JSON.parse(el_data.antiSmall)) {
-      new_anti_td = anti_td.cloneNode();
-      element.append(new_anti_td);
+    // --- E. '특효' 신규 컬럼: 순수 물리 특효주(공/룡/류/수)만 1~2칸(12px)으로 심플 렌더링 ---
+    let new_anti_td = anti_td.cloneNode();
+    new_anti_td.style.padding = "6px 8px";
+    new_anti_td.style.verticalAlign = "middle";
+    new_anti_td.style.textAlign = "center";
+
+    if (JSON.parse(el_data.antiSmall || "false")) {
+      // 소형 몬스터
+      new_anti_td.innerHTML = `<span style="font-size:11px; color:#9ca3af;">-</span>`;
     } else {
-      // 속성정보
-      let elements = el_data.element.split(",");
-      let elembanes = el_data.elembane.split(",").map(e => starEmoji2(e));
+      // 적용되는 물리 특효주 추출
+      let activeAntiItems = [];
+      if (el_data.antiAerial === "true") activeAntiItems.push({ label: "공", name: "파공룡주" });
+      if (el_data.antiDragon === "true") activeAntiItems.push({ label: "룡", name: "파룡룡주" });
+      if (el_data.antiAquatic === "true") activeAntiItems.push({ label: "류", name: "파류룡주" });
+      if (el_data.antiFranged === "true") activeAntiItems.push({ label: "수", name: "파수룡주" });
 
-      let html1 = elements.map((element, index) => {
-        return `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f1f3f5; padding:2px 0;">
-                  <span style="font-weight:700;">${element}</span>
-                  <span>${elembanes[index]}</span>
-                </div>`;
-      }).join('');
-
-      // 특효주
-      let anti_array = [];
-      anti_array[0] = { label: "공", value: starEmoji(el_data.antiAerial) };
-      anti_array[1] = { label: "룡", value: starEmoji(el_data.antiDragon) };
-      anti_array[2] = { label: "류", value: starEmoji(el_data.antiAquatic) };
-      anti_array[3] = { label: "수", value: starEmoji(el_data.antiFranged) };
-
-      let html2 = anti_array.map(a => {
-        return `<div style="display:flex; justify-content:space-between; align-items:center; padding:1px 0;">
-                  <span>${a.label}</span>
-                  <span>${a.value}</span>
-                </div>`;
-      }).join('');
-
-      // td 추가
-      new_anti_td = anti_td.cloneNode();
-      // new_anti_td.style.minWidth = "60px";
-      new_anti_td.style.padding = "6px 12px";
-      new_anti_td.style.verticalAlign = "middle";
-      new_anti_td.innerHTML = `<div style="display:flex; flex-direction:column; width:100%;">${html1}<div style="height:4px;"></div>${html2}</div>`;
-
-      // element.append(new_anti_td, element.querySelector("td.parts"));
-      element.append(new_anti_td);
+      if (activeAntiItems.length > 0) {
+        let antiLines = activeAntiItems.map(item => `
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:12px; font-weight:700; color:#1e293b; padding:1px 0;" title="${item.name}">
+            <span>${item.label}:</span>
+            <span style="font-size:12px;">⭐</span>
+          </div>
+        `).join('');
+        new_anti_td.innerHTML = `<div style="display:flex; flex-direction:column; max-width:46px; margin:0 auto;">${antiLines}</div>`;
+      } else {
+        new_anti_td.innerHTML = `<span style="font-size:11px; color:#9ca3af;" title="물리 특효주 미적용">-</span>`;
+      }
     }
+
+    element.append(new_anti_td);
   }
 })();

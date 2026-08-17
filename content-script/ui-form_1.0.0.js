@@ -371,6 +371,25 @@
 
   const searchBody = common.form.querySelector("tbody");
   searchBody.append(anomaly_tr);
+
+  // 3. 이름 검색 입력창에 문법 팁 가이드 문구 및 플레이스홀더 추가
+  const nameInput = common.form.querySelector("input[name='name']");
+  if (nameInput) {
+    nameInput.placeholder = "예: 가란/디아, 레이아!, 레이아@, 레이아#";
+    
+    const tipDiv = document.createElement("div");
+    tipDiv.id = "search-syntax-tip";
+    tipDiv.style.cssText = "margin-top: 4px; font-size: 11px; color: #64748b; line-height: 1.4; letter-spacing: -0.2px;";
+    tipDiv.innerHTML = `
+      <span style="font-weight: 700; color: #475569;">💡 검색 팁:</span> 
+      <span style="color:#0284c7; font-weight:600;">A/B</span> 다중검색 &nbsp;|&nbsp; 
+      <span style="color:#e11d48; font-weight:600;">이름!</span> 일반종만 &nbsp;|&nbsp; 
+      <span style="color:#7c3aed; font-weight:600;">이름@</span> 희소/아종만 &nbsp;|&nbsp; 
+      <span style="color:#d97706; font-weight:600;">이름#</span> 주인만 &nbsp;
+      <span style="color:#94a3b8;">(예: 야츠!/벨리/레이아@)</span>
+    `;
+    nameInput.parentNode.appendChild(tipDiv);
+  }
 })();
 
 
