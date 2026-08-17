@@ -1,24 +1,24 @@
 {
   "name": "MHR-Inven-Monster-Extension",
   "description": "몬스터헌터 라이즈 인벤 몬스터 정보 페이지 기능을 확장 합니다.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "manifest_version": 3,
   "action": {
     "default_title": "MHR-Inven-Monster-Extension"
   },
   "permissions": ["tabs", "storage"],
   "background": {
-    "service_worker": "service-worker/background.js"
+    "service_worker": "src/background/background.js"
   },
   "content_scripts": [
     {
       "matches": ["https://mhf.inven.co.kr/dataninfo/mhr/monster/"],
       "js": [
-        "content-script/common_1.0.0.js",
-        "content-script/monsters_1.0.0.js",
-        "content-script/ui-form_1.0.0.js",
-        "content-script/ui-table_1.0.0.js",
-        "content-script/search_1.0.1.js"
+        "src/content/common.js",
+        "src/content/monsters.js",
+        "src/content/ui-form.js",
+        "src/content/ui-table.js",
+        "src/content/search.js"
       ]
     }
   ]
