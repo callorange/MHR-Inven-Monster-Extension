@@ -26,3 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 *.tmp
 *.bak
+
+# Superpowers SDD Scratch
+.superpowers/
+.worktrees/
