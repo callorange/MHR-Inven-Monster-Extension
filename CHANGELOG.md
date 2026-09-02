@@ -6,6 +6,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2026-09-02
+
+### Added
+* **괴이 매트릭스 접기/펼치기(Accordion) 토글 지원**: 상단 제어 바에 아코디언 토글 버튼(`▲ 괴이 매트릭스 접기` / `▼ 괴이 매트릭스 펼치기`)을 추가하여 세로 공간 절약 및 가독성 개선 (`aria-pressed`, `aria-label` 등 웹 접근성 준수)
+* **`FilterManager` 통합 상태 관리기 (`src/content/filter-state.js`)**: 괴이 레벨(EX1~EX9), 괴이 소재, 이름 검색어(수식어 파싱 포함)를 단일 파이프라인에서 통합 평가하는 상태 관리 엔진 구축 (구독-발행 패턴 지원)
+* **분리된 전용 스타일시트 (`src/content/ui.css`)**: 템플릿 리터럴 내 인라인 `<style>` 태그를 완전히 제거하고 독립된 CSS 파일로 분리하여 Manifest V3 CSP 준수 및 렌더링 성능 최적화
+* **전용 고화질 아이콘 에셋 (`icons/`)**: 선브레이크 크림슨/와인 엠블럼과 골드 테두리 스타일의 표준 PNG 아이콘 3종(`icon-16.png`, `icon-48.png`, `icon-128.png`) 추가
+* **Zero-dependency 단위 테스트 스위트 (`tests/`)**: Node.js 내장 테스트 러너(`node --test`) 기반으로 외부 의존성 없이 31개 단위 테스트 구축 (데이터 무결성, 필터 엔진, 파서, Manifest 구조)
+
+### Changed
+* **1,400+ 라인 정적 몬스터 데이터셋 분리**: 대용량 메타데이터를 `src/content/monsters.data.js`로 분리하여 Node.js/브라우저 환경 범용 호환 및 모듈성 강화
+* **필터링 DOM 조작 일원화**: `search.js`와 `ui-form.js`에서 각자 처리하던 DOM 가시성 제어 로직을 `FilterManager` 파이프라인으로 일원화하여 필터 상태 불일치 버그 원천 차단
+* **테이블 렌더러 CSS 유틸리티 클래스 전환**: `ui-table.js`의 인라인 스타일 속성을 `ui.css` 유틸리티 클래스로 교체
+
+### Fixed/Security
+* **최소 권한 원칙(Least Privilege) 적용**: `manifest.json`에서 미사용 `"storage"` 권한을 제거하고 필수적인 `"tabs"` 권한만 유지하여 확장 프로그램 보안 및 개인정보보호 강화
+* **백그라운드 서비스 워커 URL 매칭 방어 로직 강화**: `startsWith` 검사를 도입하여 URL 쿼리스트링/해시 파라미터가 포함되어 있어도 탭 이동을 정상 처리
+* **백그라운드 배지 배경색(`setBadgeBackgroundColor`) 적용**: 다크/라이트 테마 모두에서 선명하게 식별되도록 `#be123c` 크림슨 배경색 명시
+* **DOM Null Safety 가드 강화**: `common.js`에 안전한 폴백 래퍼를 적용하여 인벤 웹페이지 구조 변경 시에도 스크립트 런타임 크래시 방지
+
+---
+
 ## [1.1.0] - 2026-08-17
 
 ### Added

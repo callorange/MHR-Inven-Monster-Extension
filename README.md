@@ -10,17 +10,22 @@
 
 ### 1. 인벤 몬스터 검색 페이지 바로가기
 - 툴바의 확장 프로그램 아이콘 클릭 시 [인벤 몬스터 정보 페이지](https://mhf.inven.co.kr/dataninfo/mhr/monster/)로 즉시 이동
+- 활성 탭이 이미 몬스터 페이지인 경우 재로드 없이 유지하며, 툴바 뱃지(`ON`, `#be123c`)로 활성화 상태 표시
 
-### 2. 강력한 커스텀 검색 및 괴이탐구 필터
-1. **고급 이름 검색 문법 (Query Modifiers)**
+### 2. 강력한 커스텀 검색 및 통합 괴이탐구 필터
+1. **단일 통합 필터링 엔진 (`FilterManager`)**
+   * 괴이 레벨(EX1~EX9), 괴이 소재, 이름 검색어 조건을 단일 파이프라인에서 통합 평가
+   * 복합 조건(예: `EX5` 레벨이면서 `비늘` 소재를 드롭하고 `레이아`가 포함된 몬스터)을 실시간으로 정확하게 필터링
+2. **고급 이름 검색 문법 (Query Modifiers)**
    * **다중 검색 (`/`)**: `가란/디아` ➔ `가란고르무`, `디아블로스` (OR 검색)
    * **일반종만 검색 (`!`)**: `레이아!` ➔ 주인, 아종, 희소종 제외하고 일반 `리오레이아`만 검색
    * **희소종/아종만 검색 (`@`)**: `레이아@` ➔ `리오레이아 희소종` 등만 검색
    * **주인 몬스터만 검색 (`#`)**: `레이아#` ➔ `주인 리오레이아`만 검색
    * **복합 조합 검색**: `야츠!/벨리/레이아@` ➔ 각 조건이 결합된 다중 필터링
    * **입력창 가이드 제공**: 이름 검색창 하단에 문법 안내 팁(`💡`) 및 플레이스홀더 제공
-2. **괴이 탐구(Anomaly) 매트릭스 퀵 필터**
+3. **괴이 탐구(Anomaly) 매트릭스 퀵 필터 & 아코디언 토글**
    * 상단에 **EX1 ~ EX9** 레벨 구간 및 괴이 소재별 인터랙티브 매트릭스 테이블 제공
+   * **매트릭스 접기/펼치기 (Accordion)**: 상단 제어 바 우측 토글 버튼(`▲ 괴이 매트릭스 접기` / `▼ 괴이 매트릭스 펼치기`)을 통해 세로 공간 절약 및 화면 최적화 지원
    * 레벨 또는 소재 클릭 시 해당 몬스터만 즉시 필터링 (토글 해제 지원)
    * **실시간 상태 바**: 현재 선택된 필터 태그, 검색 결과 카운트(`결과: N마리`), **원클릭 전체 초기화 (`↺ 전체 초기화`)** 버튼 지원
 
@@ -51,23 +56,40 @@
 
 ```text
 mhr-inven-monster-extension/
-├── manifest.json                  # Manifest V3 설정 파일
+├── manifest.json                  # Manifest V3 설정 파일 (최소 권한 원칙 적용)
 ├── README.md                      # 프로젝트 소개 문서
 ├── CHANGELOG.md                   # 버전별 변경 이력
 ├── LICENSE                        # 라이선스
 │
+├── icons/                         # 확장 프로그램 전용 아이콘 에셋
+│   ├── icon-16.png                # 16x16 툴바/파비콘 아이콘
+│   ├── icon-48.png                # 48x48 확장 프로그램 관리 페이지 아이콘
+│   └── icon-128.png               # 128x128 웹스토어/고해상도 아이콘
+│
 ├── src/                           # 소스코드 루트
 │   ├── background/
-│   │   └── background.js          # 백그라운드 서비스 워커
+│   │   └── background.js          # 백그라운드 서비스 워커 (탭 이동 & 뱃지 관리)
 │   └── content/                   # Content Scripts
-│       ├── common.js              # DOM 공통 캐싱 및 유틸
-│       ├── monsters.js            # 몬스터 속성/괴이/특효 메타데이터
-│       ├── ui-form.js             # 괴이탐구 검색 매트릭스 UI & 상태바
+│       ├── common.js              # DOM 공통 캐싱 및 Null-safe 래퍼
+│       ├── search-parser.js       # 검색어 문법 파서 (!, @, #, / 지원)
+│       ├── monsters.data.js       # 몬스터 정적 메타데이터 (순수 데이터셋)
+│       ├── monsters.js            # 몬스터 데이터 DOM 매핑 및 dataset 주입
+│       ├── filter-state.js        # 통합 필터 상태 관리자 (FilterManager)
+│       ├── ui.css                 # 확장 프로그램 전용 UI 스타일시트
+│       ├── ui-form.js             # 괴이탐구 검색 매트릭스 UI & 상태바 (아코디언 토글)
 │       ├── ui-table.js            # 몬스터 테이블 렌더링 & 플로팅 뱃지
-│       └── search.js              # 커스텀 쿼리 파서 & 이름 검색
+│       └── search.js              # 커스텀 쿼리 및 폼 이벤트 바인딩
+│
+├── tests/                         # 단위 테스트 스위트 (Node.js 내장 테스트 러너)
+│   ├── data-integrity.test.js     # 몬스터 데이터 무결성 검증 (중복/레벨/특효 등)
+│   ├── filter-state.test.js       # FilterManager 상태 및 다중 필터링 로직 검증
+│   ├── manifest-validation.test.js# Manifest V3 및 에셋 무결성 검증
+│   ├── search-parser.test.js      # 검색어 구문 분석기 검증
+│   └── search.test.js             # 검색 폼 이벤트 및 필터 연동 검증
 │
 ├── docs/                          # 프로젝트 문서 및 참고자료
-│   └── 괴이탐구.txt               # 괴이 탐구 레벨별 소재 정리 메모
+│   ├── 괴이탐구.txt               # 괴이 탐구 레벨별 소재 정리 메모
+│   └── superpowers/               # 상세 기능 명세서 및 구현 계획서
 │
 ├── imgs/                          # 스크린샷 이미지 자산
 └── .specify/ & AGENTS*.md         # AI 에이전트 거버넌스 규약
@@ -85,10 +107,36 @@ mhr-inven-monster-extension/
 
 ---
 
+## 🧪 테스트 실행 방법 (Testing)
+
+외부 패키지 의존성(`npm install`) 없이 **Node.js (v18.0.0 이상)** 내장 테스트 러너를 사용하여 전체 단위 테스트를 실행할 수 있습니다.
+
+```bash
+# 전체 단위 테스트 실행 (31개 테스트 케이스)
+node --test tests/*.test.js
+
+# 특정 테스트 스위트 개별 실행
+node --test tests/data-integrity.test.js
+node --test tests/filter-state.test.js
+node --test tests/manifest-validation.test.js
+node --test tests/search-parser.test.js
+node --test tests/search.test.js
+```
+
+---
+
 ## 📜 변경 이력 (History)
 
 자세한 버전별 변경 내역은 [CHANGELOG.md](./CHANGELOG.md)를 참조하세요.
 
+* **v1.2.0** (2026-09-02):
+  * **괴이 매트릭스 아코디언 토글**: 매트릭스 접기/펼치기 지원으로 세로 스크롤 절약 및 화면 최적화
+  * **단일 통합 상태 관리기 (`FilterManager`)**: 괴이 레벨, 괴이 소재, 이름 검색어 통합 필터링 파이프라인 구축
+  * **CSS 분리 (`src/content/ui.css`)**: 인라인 `<style>` 주입 완전 제거 및 CSP 준수
+  * **1,400+ 라인 정적 데이터 분리 (`monsters.data.js`)**: 순수 데이터셋 분리로 범용 모듈성 및 테스트 용이성 확보
+  * **전용 고화질 아이콘 탑재 (`icons/`)**: 선브레이크 크림슨 테마의 16/48/128px PNG 에셋 제공
+  * **최소 권한 원칙(Least Privilege) 적용**: 미사용 `storage` 권한 제거 및 `tabs` 권한 최적화
+  * **Zero-dependency 단위 테스트 스위트 구축**: Node.js 내장 테스트 러너 기반 31개 단위 테스트 100% 통과
 * **v1.1.0** (2026-08-17):
   * 괴이탐구 검색창 UI 현대화 (실시간 상태바, 결과 카운트, 초기화 버튼)
   * 이름 검색창 문법 도움말 및 플레이스홀더 추가
