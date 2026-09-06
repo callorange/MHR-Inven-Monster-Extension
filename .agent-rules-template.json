@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "installed_version": "2.8.1",
+  "hash_policy": {
+    "text": "text-v1",
+    "binary": "binary-v1"
+  },
+  "managed_block": {
+    "sha256": "e128b2db92afbed166dd0d97229887934a6da0c8b14e0563f2f79b08807e06cf"
+  },
+  "managed_files": {
+    ".agents/agents/auditor.md": {
+      "type": "text",
+      "sha256": "96e459228231f5129acace99b7636b3fd9240722d0f961feabd7a48c07472703"
+    },
+    ".agents/skills/gitignore-generator/SKILL.md": {
+      "type": "text",
+      "sha256": "482001112ede96dbe724c550dce31a57cb21305f8d564c6c76112d83822176f6"
+    },
+    ".agents/skills/gitignore-generator/scripts/gitignore.ps1": {
+      "type": "text",
+      "sha256": "14f46b06261d3efbafb1b70b3d77712b2004da80547732331cb27fce2a6ee4e3"
+    },
+    ".agents/skills/gitignore-generator/scripts/gitignore.sh": {
+      "type": "text",
+      "sha256": "c23de95a237f373956168c34d98382447fea0bdda25297eec3764b4ee539764e"
+    },
+    ".agents/skills/handoff/SKILL.md": {
+      "type": "text",
+      "sha256": "ec391e807018b3e8f65d76bea0fcad9fb25537f89bdfaca1280759a1b4348795"
+    },
+    ".agents/skills/python-ecosystem-kb/SKILL.md": {
+      "type": "text",
+      "sha256": "7d0f66fb24d4489400affd9e9c4a589d5811a01b7f77b8f3934715dea930c214"
+    },
+    ".agents/skills/python-ecosystem-kb/resources/wikidocs-14021.md": {
+      "type": "text",
+      "sha256": "2cfaed2524dcee88fae18ba7ede7d40dddac89887c8a0ff1d76b55404d426bea"
+    },
+    "guides/README.md": {
+      "type": "text",
+      "sha256": "4ada618f3a20492177ebab1ab184b0fe5ebb1da93090360df544ac9c90a6cc50"
+    },
+    "guides/prompt-context-engineering.md": {
+      "type": "text",
+      "sha256": "00aa49a550a3c89c1716e827ebfb6c437c94c298fc6987e6c34fd9d1507db1df"
+    },
+    "rules/architecture/ai-llm-rag.md": {
+      "type": "text",
+      "sha256": "a8c4ec836245437886accb7f35507c4293a5ecb24fa6327d5a964910d4d56e55"
+    },
+    "rules/architecture/backend-api.md": {
+      "type": "text",
+      "sha256": "01a28c93c00ed7d8d0d0db14ff616b2d7aa68585be4c20793df250031643bec7"
+    },
+    "rules/architecture/database-orm.md": {
+      "type": "text",
+      "sha256": "cb8da86b235ef4fdaf65c73fec64c70be23c0f2235de524582868b2a4ba3b754"
+    },
+    "rules/architecture/library-package.md": {
+      "type": "text",
+      "sha256": "3a2ed21d4ea134718abc888ed3d834a3552f68b0aa436088bb77f504c7305c99"
+    },
+    "rules/architecture/monorepo.md": {
+      "type": "text",
+      "sha256": "70034fe98c0f95e9af07e08338d722e0bb4c64ed1aa77b896a14c9946eca3d5e"
+    },
+    "rules/architecture/recommended-external-skills.md": {
+      "type": "text",
+      "sha256": "7212cf78689972610adc840d1f9081c4344a6d034568f24c1cd42218cf278af1"
+    },
+    "rules/architecture/web-frontend.md": {
+      "type": "text",
+      "sha256": "1c0833b3b11ac9717fc0589ebdb741e84977285f89f1c22f005e91ee536085f9"
+    },
+    "rules/frameworks/django.md": {
+      "type": "text",
+      "sha256": "bdafe0816e5f4541ed37fc5bc93b545af3d8038956b38a64a3d9d38e03f91005"
+    },
+    "rules/frameworks/fastapi.md": {
+      "type": "text",
+      "sha256": "0e36db19248b7fa148363da06dad4eb6d9c6640f6f66284262fc86e289be54bc"
+    },
+    "rules/frameworks/litestar.md": {
+      "type": "text",
+      "sha256": "1ec3e0c98475d40e5d628a786410201cec0b41e2ec357ef072402c26643c171c"
+    },
+    "rules/frameworks/next.md": {
+      "type": "text",
+      "sha256": "05ea44b25b61399f4e221aaf14a3af88f0ba83ab81e376b7423fbdfacbc40302"
+    },
+    "rules/frameworks/nuxt.md": {
+      "type": "text",
+      "sha256": "1dfe446f5d252724a948441fa4a8537d8e2388ff248c049f1737a26af795a727"
+    },
+    "rules/frameworks/react.md": {
+      "type": "text",
+      "sha256": "7a4d172068497ead8f4c481346dc6a4ae95ffa4febda413388f0fc49dbc3af64"
+    },
+    "rules/frameworks/vue.md": {
+      "type": "text",
+      "sha256": "b70a0f9dad79191eb193684a35769c1f3d2af6df2262abaee4b3099089e00758"
+    },
+    "rules/packaging/deployment-nginx.md": {
+      "type": "text",
+      "sha256": "442cca9be053bfbe1fc33e4bcd51e6bfca26afc724e7d38a708df9785a799689"
+    },
+    "rules/packaging/deployment-python-server.md": {
+      "type": "text",
+      "sha256": "eea8b95e0a0908bbe53aaa2cec1876d0137e7e75cb23b9b980bcdff59f74afa7"
+    },
+    "rules/packaging/docker.md": {
+      "type": "text",
+      "sha256": "83424d64897b038b06f62a8dc320855ef606c064aacfea59742878b71257d186"
+    },
+    "rules/packaging/package-npm.md": {
+      "type": "text",
+      "sha256": "d0fa72ecc6dfdb63a6fd29a08a4f4bed295da7ca767c20457b2a320405941fd5"
+    },
+    "rules/packaging/package-python.md": {
+      "type": "text",
+      "sha256": "f5df44104ca354f15cc32cec8953b01529a3b6beaa60112e58a6dbb35798b772"
+    },
+    "rules/styles/cpp.md": {
+      "type": "text",
+      "sha256": "f2fd8fd03c9edf823b58a253537a0e0bbbaceda1a5ee3d609e76e2640d31d409"
+    },
+    "rules/styles/csharp.md": {
+      "type": "text",
+      "sha256": "e7c33b22c9be3b5c005694cb1b92d0afa1d516ed033599bf490a96a0b3665270"
+    },
+    "rules/styles/dart.md": {
+      "type": "text",
+      "sha256": "09498f041c4c0b474487eb13c67e34ac4b78c0a17a8499e49be3f4ee551aa26a"
+    },
+    "rules/styles/go.md": {
+      "type": "text",
+      "sha256": "2accb0975ce97595e48f7a24defb042391f9e9ac765431bcf95804ddfcaf9751"
+    },
+    "rules/styles/html-css.md": {
+      "type": "text",
+      "sha256": "f9566d0945b174a0345bd45248b07e8a3ff730b13f236a3e25ca2044e378c7e8"
+    },
+    "rules/styles/javascript.md": {
+      "type": "text",
+      "sha256": "248cff6614f0650dc7752b7145f6d93adb31c625e2000c492cbd9209850efcb4"
+    },
+    "rules/styles/python.md": {
+      "type": "text",
+      "sha256": "2bcb7be37715f7e766ef6dcf7a6c7563f9ebd5e8da6af3646a4a14b62f0aa271"
+    },
+    "rules/styles/typescript.md": {
+      "type": "text",
+      "sha256": "6604c3b6f979566469eabdba2cbc8f0dcab681c16e4d04032f62fa83974759f7"
+    }
+  },
+  "project_rules_guidance_added": true
+}
